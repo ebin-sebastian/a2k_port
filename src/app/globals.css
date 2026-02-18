@@ -26,6 +26,10 @@ body {
   overflow-x: hidden;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 /* Glassmorphism utility */
 .glass {
   background: var(--card-bg);
