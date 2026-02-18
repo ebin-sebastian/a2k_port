@@ -65,8 +65,8 @@ export default function ContactPage() {
             </div>
 
             <footer className="py-12 text-center">
-                <div className="text-[9px] uppercase tracking-[0.4em] text-zinc-800 font-bold">
-                    © 2025 nodeleap studios x aachath akshay menon
+                <div className="text-[9px] uppercase tracking-[0.4em] text-zinc-800 font-bold cursor-default">
+                    © 2026 <span className="hover:text-[#db520d] transition-colors duration-300">nodeleap studios</span> x <span className="hover:text-white transition-colors duration-300">aachath akshay menon</span>
                 </div>
             </footer>
         </main>
