@@ -19,7 +19,7 @@ export default function FeaturedProjects() {
                     className="container mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center"
                 >
                     <div className={`lg:col-span-8 ${index % 2 === 0 ? "lg:order-1" : "lg:order-2"}`}>
-                        <div className="relative aspect-[16/9] overflow-hidden rounded-sm bg-zinc-900 group">
+                        <div className="relative aspect-video overflow-hidden rounded-sm bg-zinc-900 group">
                             {project.thumbnailUrl ? (
                                 <video
                                     autoPlay
@@ -43,6 +43,7 @@ export default function FeaturedProjects() {
                         <motion.div
                             initial={{ opacity: 0, x: index % 2 === 0 ? 20 : -20 }}
                             whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true }}
                             transition={{ duration: 0.8, delay: 0.3 }}
                             className="space-y-6"
                         >

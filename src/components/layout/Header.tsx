@@ -1,20 +1,22 @@
 "use client";
 
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, useScroll, useMotionValueEvent } from "framer-motion";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 
 const navItems = [
-    { name: "Portfolio", href: "/#work" },
     { name: "About", href: "/#about" },
-    { name: "Contact", href: "/#contact" },
     { name: "Archive", href: "/work" },
+    { name: "Contact", href: "/contact" },
 ];
 
 export default function Header() {
     const pathname = usePathname();
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [isHidden, setIsHidden] = useState(false);
+    const { scrollY } = useScroll();
+    const lastScrollY = useRef(0);
 
     // Close menu on route change
     useEffect(() => {
@@ -30,16 +32,32 @@ export default function Header() {
         }
     }, [isMenuOpen]);
 
+    // Smart Scroll Logic
+    useMotionValueEvent(scrollY, "change", (latest) => {
+        const previous = lastScrollY.current;
+        const diff = latest - previous;
+
+        if (latest > 100 && diff > 0) {
+            setIsHidden(true); // Hide on scroll down
+        } else if (diff < 0) {
+            setIsHidden(false); // Show on scroll up
+        }
+        lastScrollY.current = latest;
+    });
+
     return (
         <>
             <motion.header
-                initial={{ y: -20, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
-                className="fixed top-0 left-0 right-0 z-[100] flex justify-between items-center px-8 md:px-16 py-8 md:py-12 mix-blend-difference"
+                variants={{
+                    visible: { y: 0 },
+                    hidden: { y: "-100%" },
+                }}
+                animate={isHidden ? "hidden" : "visible"}
+                transition={{ duration: 0.35, ease: "easeInOut" }}
+                className="fixed top-0 left-0 right-0 z-[100] flex justify-between items-center px-8 md:px-16 py-6 md:py-8 bg-[#050505]"
             >
                 <Link href="/" className="group flex flex-col" onClick={() => setIsMenuOpen(false)}>
-                    <span className="text-xl md:text-2xl font-bold tracking-[0.3em] uppercase leading-none">Akshay Menon</span>
+                    <span className="text-xl md:text-2xl font-bold tracking-[0.3em] uppercase leading-none text-white">Akshay Menon</span>
                     <span className="text-[9px] md:text-[10px] tracking-[0.6em] uppercase text-gray-500 mt-2 group-hover:text-white transition-colors duration-500">
                         Films & Direction
                     </span>
@@ -54,7 +72,7 @@ export default function Header() {
                                 className="text-[10px] font-bold uppercase tracking-[0.4em] text-gray-400 hover:text-white transition-all duration-500 relative py-2 group"
                             >
                                 {item.name}
-                                <span className="absolute bottom-0 left-0 w-0 h-[1px] bg-white transition-all duration-500 group-hover:w-full" />
+                                <span className="absolute bottom-0 left-0 w-0 h-px bg-white transition-all duration-500 group-hover:w-full" />
                             </Link>
                         ))}
                     </div>
@@ -84,7 +102,7 @@ export default function Header() {
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
-                        transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+                        transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
                         className="fixed inset-0 bg-black z-[90] flex flex-col items-center justify-center"
                     >
                         <nav className="flex flex-col items-center gap-8">

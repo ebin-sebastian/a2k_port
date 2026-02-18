@@ -1,6 +1,7 @@
 "use client";
 
 import Header from "@/components/layout/Header";
+import Footer from "@/components/layout/Footer";
 import ProjectGrid from "@/components/ui/ProjectGrid";
 import { motion } from "framer-motion";
 
@@ -32,11 +33,7 @@ export default function WorkPage() {
 
             <ProjectGrid />
 
-            <footer className="py-24 px-8 md:px-16 text-center border-t border-zinc-900">
-                <div className="text-[9px] uppercase tracking-[0.4em] text-zinc-800 font-bold">
-                    © 2025 nodeleap studios x aachath akshay menon
-                </div>
-            </footer>
+            <Footer />
         </main>
     );
 }
