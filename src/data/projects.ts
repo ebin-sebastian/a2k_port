@@ -17,8 +17,8 @@ export const projects: Project[] = [
         category: "Direction",
         description: "A high-energy visual exploration for the ALBOE project.",
         role: "Director",
-        videoUrl: "",
-        thumbnailUrl: "",
+        videoUrl: "https://www.youtube.com/watch?v=whLpaJS3ggM",
+        thumbnailUrl: "/assets/videos/aloe.mp4",
         featured: true
     },
     {
@@ -27,8 +27,8 @@ export const projects: Project[] = [
         category: "Direction",
         description: "An evocative brand story documenting the journey of the TinkerHub community.",
         role: "Director",
-        videoUrl: "",
-        thumbnailUrl: "",
+        videoUrl: "https://www.youtube.com/watch?v=xyyKzKckbxE",
+        thumbnailUrl: "/assets/videos/tinkerhub.mp4",
         featured: true
     },
     {
@@ -37,8 +37,8 @@ export const projects: Project[] = [
         category: "Instructional",
         description: "Series of high-quality educational videos produced for the Instruo platform.",
         role: "Director",
-        videoUrl: "",
-        thumbnailUrl: "",
+        videoUrl: "https://vimeo.com/1083095326",
+        thumbnailUrl: "/assets/videos/instruo.mp4",
         featured: true
     },
     {
@@ -47,8 +47,8 @@ export const projects: Project[] = [
         category: "Commercial",
         description: "Elegant commercial work blending fashion and luxury jewellery aesthetics.",
         role: "Director",
-        videoUrl: "",
-        thumbnailUrl: "",
+        videoUrl: "https://vimeo.com/818729167",
+        thumbnailUrl: "/assets/videos/rani.mp4",
         featured: true
     },
     {
@@ -67,8 +67,7 @@ export const projects: Project[] = [
         description: "Dynamic commercial featuring Divya Prabha, focusing on the cinematic capabilities of the Vivo V50.",
         role: "Director",
         videoUrl: "",
-        thumbnailUrl: "",
-        featured: true
+        thumbnailUrl: ""
     },
     {
         id: "prince-of-noodles",
@@ -76,8 +75,9 @@ export const projects: Project[] = [
         category: "Film",
         description: "A narrative film directed for Frank Dukes, exploring unique visual themes.",
         role: "Director",
-        videoUrl: "",
-        thumbnailUrl: ""
+        videoUrl: "https://www.youtube.com/watch?v=lE82EH7bsfo",
+        thumbnailUrl: "/assets/videos/noodles.mp4",
+        featured: true
     },
     {
         id: "cyber-safety",

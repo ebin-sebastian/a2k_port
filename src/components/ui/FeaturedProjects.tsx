@@ -19,14 +19,14 @@ export default function FeaturedProjects() {
                     className="container mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center"
                 >
                     <div className={`lg:col-span-8 ${index % 2 === 0 ? "lg:order-1" : "lg:order-2"}`}>
-                        <div className="relative aspect-video overflow-hidden rounded-sm bg-zinc-900 group">
+                        <Link href={`/work/${project.id}`} className="block relative aspect-video overflow-hidden rounded-sm bg-zinc-900 group">
                             {project.thumbnailUrl ? (
                                 <video
                                     autoPlay
                                     loop
                                     muted
                                     playsInline
-                                    className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
+                                    className="w-full h-full object-cover transition-all duration-1000 ease-[0.16,1,0.3,1] group-hover:scale-105 group-hover:opacity-90"
                                 >
                                     <source src={project.thumbnailUrl} type="video/mp4" />
                                 </video>
@@ -35,8 +35,19 @@ export default function FeaturedProjects() {
                                     Project in Production
                                 </div>
                             )}
-                            <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-700" />
-                        </div>
+
+                            {/* Overlay Gradient for Contrast */}
+                            <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-colors duration-[1.2s] ease-[0.16,1,0.3,1] pointer-events-none" />
+
+                            {/* Cinematic Typography Reveal */}
+                            <div className="absolute inset-0 flex items-center justify-center pointer-events-none overflow-hidden">
+                                <div className="flex items-center justify-center translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-1000 ease-[0.16,1,0.3,1]">
+                                    <span className="text-[12px] md:text-[14px] uppercase tracking-[1em] font-bold text-white ml-[1em]">
+                                        Play
+                                    </span>
+                                </div>
+                            </div>
+                        </Link>
                     </div>
 
                     <div className={`lg:col-span-4 ${index % 2 === 0 ? "lg:order-2" : "lg:order-1 lg:text-right"}`}>
