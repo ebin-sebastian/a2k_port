@@ -9,6 +9,7 @@ import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import ContactCTA from "@/components/ui/ContactCTA";
 
 // Dynamically import Plyr with ssr disabled to prevent "document is not defined" error
 const Plyr = dynamic(() => import("plyr-react").then((mod) => mod.Plyr), { ssr: false });
@@ -149,6 +150,8 @@ export default function ProjectPage({ params }: { params: Promise<{ id: string }
 
                 </div>
             </main>
+
+            <ContactCTA />
             <Footer />
         </>
     );

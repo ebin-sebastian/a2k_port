@@ -77,7 +77,7 @@ export default function FeaturedProjects() {
                 </motion.div>
             ))}
 
-            <div className="container mx-auto px-6 py-24 flex justify-center">
+            <div className="container mx-auto px-6 pt-24 pb-8 flex justify-center">
                 <Link
                     href="/work"
                     className="group relative px-12 py-5 border border-zinc-800 hover:border-white transition-colors duration-700 overflow-hidden text-center min-w-[300px]"

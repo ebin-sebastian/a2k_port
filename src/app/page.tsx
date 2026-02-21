@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import FeaturedProjects from "@/components/ui/FeaturedProjects";
+import ContactCTA from "@/components/ui/ContactCTA";
 
 export default function Home() {
   return (
@@ -72,13 +73,6 @@ export default function Home() {
               </motion.div>
             </div>
           </div>
-
-          {/* Side Badge */}
-          <div className="absolute right-0 top-1/2 -translate-y-1/2 rotate-90 origin-right hidden xl:block">
-            <span className="text-[9px] uppercase tracking-[1em] text-zinc-800 font-bold whitespace-nowrap">
-              Creative Excellence / 10+ Years Experience
-            </span>
-          </div>
         </section>
 
         {/* Featured Projects Selection */}
@@ -95,6 +89,9 @@ export default function Home() {
         <div className="bg-[#050505]">
           <FeaturedProjects />
         </div>
+
+        {/* Contact CTA Bridge to Footer */}
+        <ContactCTA />
 
         <Footer />
       </main>
