@@ -34,7 +34,7 @@ export default function Home() {
                 transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
               >
                 <span className="text-[10px] uppercase tracking-[0.8em] text-zinc-500 mb-8 block font-bold">
-                  Cinematic Portfolio / 2025
+                  About Me / 2026
                 </span>
                 <h1 className="text-[12vw] lg:text-[10vw] font-bold leading-[0.85] tracking-tighter uppercase mb-12">
                   Visionary <br />
