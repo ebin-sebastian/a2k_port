@@ -22,14 +22,15 @@ export default function FeaturedProjects() {
                         <Link href={`/work/${project.id}`} className="block relative aspect-video overflow-hidden rounded-sm bg-zinc-900 group">
                             {project.thumbnailUrl ? (
                                 <video
+                                    src={project.thumbnailUrl}
                                     autoPlay
                                     loop
                                     muted
                                     playsInline
+                                    disablePictureInPicture
+                                    preload="metadata"
                                     className="w-full h-full object-cover transition-all duration-1000 ease-[0.16,1,0.3,1] group-hover:scale-105 group-hover:opacity-90"
-                                >
-                                    <source src={project.thumbnailUrl} type="video/mp4" />
-                                </video>
+                                />
                             ) : (
                                 <div className="w-full h-full flex items-center justify-center bg-zinc-800/20 text-zinc-700 uppercase tracking-widest text-[10px]">
                                     Project in Production

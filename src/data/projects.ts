@@ -18,7 +18,7 @@ export const projects: Project[] = [
         description: "A high-energy visual exploration for the ALBOE project.",
         role: "Director",
         videoUrl: "https://www.youtube.com/watch?v=whLpaJS3ggM",
-        thumbnailUrl: "/assets/videos/aloe.mp4",
+        thumbnailUrl: "/assets/videos/aloe264.mp4",
         featured: true
     },
     {
@@ -28,7 +28,7 @@ export const projects: Project[] = [
         description: "An evocative brand story documenting the journey of the TinkerHub community.",
         role: "Director",
         videoUrl: "https://www.youtube.com/watch?v=xyyKzKckbxE",
-        thumbnailUrl: "/assets/videos/tinkerhub.mp4",
+        thumbnailUrl: "/assets/videos/tinkerhub264.mp4",
         featured: true
     },
     {
@@ -38,7 +38,7 @@ export const projects: Project[] = [
         description: "Series of high-quality educational videos produced for the Instruo platform.",
         role: "Director",
         videoUrl: "https://vimeo.com/1083095326",
-        thumbnailUrl: "/assets/videos/instruo.mp4",
+        thumbnailUrl: "/assets/videos/instruo264.mp4",
         featured: true
     },
     {
@@ -48,7 +48,7 @@ export const projects: Project[] = [
         description: "Elegant commercial work blending fashion and luxury jewellery aesthetics.",
         role: "Director",
         videoUrl: "https://vimeo.com/818729167",
-        thumbnailUrl: "/assets/videos/rani.mp4",
+        thumbnailUrl: "/assets/videos/rani264.mp4",
         featured: true
     },
     {
@@ -76,7 +76,7 @@ export const projects: Project[] = [
         description: "A narrative film directed for Frank Dukes, exploring unique visual themes.",
         role: "Director",
         videoUrl: "https://www.youtube.com/watch?v=lE82EH7bsfo",
-        thumbnailUrl: "/assets/videos/noodles.mp4",
+        thumbnailUrl: "/assets/videos/noodles264.mp4",
         featured: true
     },
     {
