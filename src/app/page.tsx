@@ -29,8 +29,8 @@ export default function Home() {
           <div className="absolute inset-0 bg-gradient-to-r from-[#050505] via-transparent to-transparent" />
 
           {/* Asymmetric Hero Content */}
-          <div className="relative z-10 w-full grid grid-cols-1 lg:grid-cols-12 gap-10 md:gap-12">
-            <div className="lg:col-span-8">
+          <div className="relative z-10 w-full grid grid-cols-1 xl:grid-cols-12 gap-10 md:gap-12">
+            <div className="xl:col-span-8 min-w-0">
               <motion.div
                 initial={{ opacity: 0, x: -30 }}
                 animate={{ opacity: 1, x: 0 }}
@@ -40,13 +40,13 @@ export default function Home() {
                   About Me / 2026
                 </span>
                 <div className="mb-8 md:mb-12 max-w-full overflow-hidden">
-                  <h1 className="text-[clamp(2.9rem,10vw,6.75rem)] lg:text-[8vw] font-bold leading-[0.96] sm:leading-[0.9] lg:leading-[0.85] tracking-[-0.045em] uppercase text-zinc-200">
+                  <h1 className="text-[clamp(2.35rem,7.2vw,7.25rem)] font-bold leading-[0.98] sm:leading-[0.92] lg:leading-[0.88] tracking-[-0.02em] sm:tracking-[-0.03em] uppercase text-zinc-300">
                     Films
                   </h1>
-                  <h1 className="text-[clamp(2.9rem,10vw,6.75rem)] lg:text-[8vw] font-bold leading-[0.96] sm:leading-[0.9] lg:leading-[0.85] tracking-[-0.045em] uppercase text-zinc-400">
+                  <h1 className="text-[clamp(2.35rem,7.2vw,7.25rem)] font-bold leading-[0.98] sm:leading-[0.92] lg:leading-[0.88] tracking-[-0.02em] sm:tracking-[-0.03em] uppercase text-zinc-400">
                     Commercials
                   </h1>
-                  <h1 className="text-[clamp(2.9rem,10vw,6.75rem)] lg:text-[8vw] font-bold leading-[0.96] sm:leading-[0.9] lg:leading-[0.85] tracking-[-0.045em] uppercase text-zinc-500">
+                  <h1 className="text-[clamp(2.35rem,7.2vw,7.25rem)] font-bold leading-[0.98] sm:leading-[0.92] lg:leading-[0.88] tracking-[-0.02em] sm:tracking-[-0.03em] uppercase text-zinc-500">
                     Documentaries
                   </h1>
                 </div>
@@ -71,7 +71,7 @@ export default function Home() {
               </motion.div>
             </div>
 
-            <div className="hidden lg:flex lg:col-span-4 flex-col justify-end items-end gap-16 text-right">
+            <div className="hidden xl:flex xl:col-span-4 flex-col justify-end items-end gap-16 text-right">
               <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
