@@ -14,9 +14,9 @@ export const projects: Project[] = [
     {
         id: "alboe",
         title: "ALBOE IS COMING - ARE YOU READY?",
-        category: "Direction",
+        category: "Direction & Writing",
         description: "A high-energy visual exploration for the ALBOE project.",
-        role: "Director",
+        role: "Direction & Writing",
         videoUrl: "https://www.youtube.com/watch?v=whLpaJS3ggM",
         thumbnailUrl: "/assets/videos/aloe264.mp4",
         featured: true
@@ -24,9 +24,9 @@ export const projects: Project[] = [
     {
         id: "tinkerhub",
         title: "OPEN KNOWLEDGE, OPEN HEARTS · THE TINKERHUB STORY",
-        category: "Direction",
+        category: "Direction & Writing",
         description: "An evocative brand story documenting the journey of the TinkerHub community.",
-        role: "Director",
+        role: "Direction & Writing",
         videoUrl: "https://www.youtube.com/watch?v=xyyKzKckbxE",
         thumbnailUrl: "/assets/videos/tinkerhub264.mp4",
         featured: true
@@ -34,9 +34,9 @@ export const projects: Project[] = [
     {
         id: "instruo",
         title: "INSTRUO - E-LEARNING VIDEOS",
-        category: "Instructional",
+        category: "Direction & Writing",
         description: "Series of high-quality educational videos produced for the Instruo platform.",
-        role: "Director",
+        role: "Direction & Writing",
         videoUrl: "https://vimeo.com/1083095326",
         thumbnailUrl: "/assets/videos/instruo264.mp4",
         featured: true
@@ -44,9 +44,9 @@ export const projects: Project[] = [
     {
         id: "rani-pink",
         title: "RANI PINK X KIRTHI DIAMOND JEWELLERY",
-        category: "Commercial",
+        category: "Direction",
         description: "Elegant commercial work blending fashion and luxury jewellery aesthetics.",
-        role: "Director",
+        role: "Direction",
         videoUrl: "https://vimeo.com/818729167",
         thumbnailUrl: "/assets/videos/rani264.mp4",
         featured: true
@@ -54,27 +54,27 @@ export const projects: Project[] = [
     {
         id: "jerryland",
         title: "JERRYLAND",
-        category: "Creative Direction",
+        category: "Direction & Writing",
         description: "Conceptual visual project focusing on artistic story-telling.",
-        role: "Director",
+        role: "Direction & Writing",
         videoUrl: "",
         thumbnailUrl: ""
     },
     {
         id: "vivo-v50",
         title: "VIVO V50 FT DIVYA PRABHA",
-        category: "Commercial",
+        category: "Direction & Writing",
         description: "Dynamic commercial featuring Divya Prabha, focusing on the cinematic capabilities of the Vivo V50.",
-        role: "Director",
+        role: "Direction & Writing",
         videoUrl: "",
         thumbnailUrl: ""
     },
     {
         id: "prince-of-noodles",
         title: "THE PRINCE OF NOODLES",
-        category: "Film",
+        category: "Direction",
         description: "A narrative film directed for Frank Dukes, exploring unique visual themes.",
-        role: "Director",
+        role: "Direction",
         videoUrl: "https://www.youtube.com/watch?v=lE82EH7bsfo",
         thumbnailUrl: "/assets/videos/noodles264.mp4",
         featured: true
@@ -82,27 +82,27 @@ export const projects: Project[] = [
     {
         id: "cyber-safety",
         title: "CYBER SAFETY FOR PRE TEENS | BODHINI NGO",
-        category: "Educational",
+        category: "Direction & Writing",
         description: "Impactful educational content developed for Bodhini NGO to promote cyber safety.",
-        role: "Director",
+        role: "Direction & Writing",
         videoUrl: "",
         thumbnailUrl: ""
     },
     {
         id: "body-safety",
         title: "BODY SAFETY RULES FOR SMALLER CHILDREN",
-        category: "Educational",
+        category: "Direction & Writing",
         description: "Sensitive and informative content focusing on body safety for children.",
-        role: "Director",
+        role: "Direction & Writing",
         videoUrl: "",
         thumbnailUrl: ""
     },
     {
         id: "healing",
         title: "HEALING FT - ANNA BEN",
-        category: "Direction",
+        category: "Direction & Writing",
         description: "Conceptual film project featuring Anna Ben, exploring themes of restoration and growth.",
-        role: "Director",
+        role: "Direction & Writing",
         videoUrl: "",
         thumbnailUrl: ""
     }
