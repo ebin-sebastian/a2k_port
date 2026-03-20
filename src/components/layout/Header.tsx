@@ -6,7 +6,7 @@ import { usePathname } from "next/navigation";
 import { useState, useEffect, useRef } from "react";
 
 const navItems = [
-    { name: "About", href: "/#about" },
+    { name: "Home", href: "/" },
     { name: "Archive", href: "/work" },
     { name: "Contact", href: "/contact" },
 ];
@@ -59,7 +59,7 @@ export default function Header() {
                 <Link href="/" className="group flex flex-col" onClick={() => setIsMenuOpen(false)}>
                     <span className="text-xl md:text-2xl font-bold tracking-[0.3em] uppercase leading-none text-white">Akshay Menon</span>
                     <span className="text-[9px] md:text-[10px] tracking-[0.6em] uppercase text-gray-500 mt-2 group-hover:text-white transition-colors duration-500">
-                        Films & Direction
+                        Writing & Directing
                     </span>
                 </Link>
 

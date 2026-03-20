@@ -17,7 +17,10 @@ export default function Home() {
         <div className="h-[120px] md:h-[160px] w-full" />
 
         {/* Cinematic Hero */}
-        <section id="about" className="relative h-[calc(100vh-120px)] md:h-[calc(100vh-160px)] w-full overflow-hidden flex items-end pb-24 md:pb-32 px-8 md:px-16 bg-[#050505]">
+        <section
+          id="about"
+          className="relative min-h-[calc(100svh-120px)] md:min-h-[calc(100svh-160px)] w-full overflow-hidden flex items-center pt-5 pb-16 md:pt-8 md:pb-24 px-6 sm:px-8 md:px-16 bg-[#050505]"
+        >
           {/* Cinematic Backdrop */}
           <div className="absolute inset-0 bg-[#050505]" />
 
@@ -26,27 +29,34 @@ export default function Home() {
           <div className="absolute inset-0 bg-gradient-to-r from-[#050505] via-transparent to-transparent" />
 
           {/* Asymmetric Hero Content */}
-          <div className="relative z-10 w-full grid grid-cols-1 lg:grid-cols-12 gap-12">
+          <div className="relative z-10 w-full grid grid-cols-1 lg:grid-cols-12 gap-10 md:gap-12">
             <div className="lg:col-span-8">
               <motion.div
                 initial={{ opacity: 0, x: -30 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
               >
-                <span className="text-[10px] uppercase tracking-[0.8em] text-zinc-500 mb-8 block font-bold">
+                <span className="text-[9px] sm:text-[10px] uppercase tracking-[0.45em] sm:tracking-[0.8em] text-zinc-500 mb-6 md:mb-8 block font-bold">
                   About Me / 2026
                 </span>
-                <h1 className="text-[12vw] lg:text-[10vw] font-bold leading-[0.85] tracking-tighter uppercase mb-12">
-                  Visionary <br />
-                  <span className="text-zinc-800 outline-text">Directing</span>
-                </h1>
+                <div className="mb-8 md:mb-12 max-w-full overflow-hidden">
+                  <h1 className="text-[clamp(2.9rem,10vw,6.75rem)] lg:text-[8vw] font-bold leading-[0.96] sm:leading-[0.9] lg:leading-[0.85] tracking-[-0.045em] uppercase text-zinc-200">
+                    Films
+                  </h1>
+                  <h1 className="text-[clamp(2.9rem,10vw,6.75rem)] lg:text-[8vw] font-bold leading-[0.96] sm:leading-[0.9] lg:leading-[0.85] tracking-[-0.045em] uppercase text-zinc-400">
+                    Commercials
+                  </h1>
+                  <h1 className="text-[clamp(2.9rem,10vw,6.75rem)] lg:text-[8vw] font-bold leading-[0.96] sm:leading-[0.9] lg:leading-[0.85] tracking-[-0.045em] uppercase text-zinc-500">
+                    Documentaries
+                  </h1>
+                </div>
               </motion.div>
 
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1.2, delay: 0.8 }}
-                className="flex flex-col md:flex-row md:items-center gap-12"
+                className="flex flex-col md:flex-row md:items-center gap-8 md:gap-12"
               >
                 <p className="text-zinc-400 text-sm max-w-2xl leading-relaxed font-medium">
                   I’m a director and writer drawn to visual storytelling that feels honest and emotionally grounded. I began my journey as a BTS camera lead on major Bollywood productions like Student of the Year 2 and Zero, and later worked on commercial sets for brands such as Facebook and Amazon. As a director, I’ve created festival-selected short films, impactful PSAs, brand films, and documentaries. I’ve also led large-scale explainer and training video projects, co-founded Nodleap Studios, and delivered 350+ videos. Across formats, I believe in story-first filmmaking—whether commercial, intimate, or educational.
@@ -69,7 +79,7 @@ export default function Home() {
                 className="space-y-2"
               >
                 <div className="text-[9px] uppercase tracking-[0.4em] text-zinc-600">Based in</div>
-                <div className="text-xs uppercase tracking-widest text-zinc-300">Mumbai / Kerala</div>
+                <div className="text-xs uppercase tracking-widest text-zinc-300">Mumbai / Kochi</div>
               </motion.div>
             </div>
           </div>
