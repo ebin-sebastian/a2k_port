@@ -15,13 +15,19 @@ export default function Header() {
     const pathname = usePathname();
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [isHidden, setIsHidden] = useState(false);
-    const [isScrolled, setIsScrolled] = useState(false);
     const { scrollY } = useScroll();
     const lastScrollY = useRef(0);
+    const headerRef = useRef<HTMLElement | null>(null);
 
     // Close menu on route change
     useEffect(() => {
-        setIsMenuOpen(false);
+        const frameId = window.requestAnimationFrame(() => {
+            setIsMenuOpen(false);
+        });
+
+        return () => {
+            window.cancelAnimationFrame(frameId);
+        };
     }, [pathname]);
 
     // Prevent scroll when menu is open
@@ -35,7 +41,6 @@ export default function Header() {
 
     // Smart Scroll Logic
     useMotionValueEvent(scrollY, "change", (latest) => {
-        setIsScrolled(latest > 50);
         const previous = lastScrollY.current;
         const diff = latest - previous;
 
@@ -50,22 +55,34 @@ export default function Header() {
     return (
         <>
             <motion.header
+                ref={headerRef}
                 variants={{
                     visible: { y: 0 },
                     hidden: { y: "-100%" },
                 }}
                 animate={isHidden ? "hidden" : "visible"}
                 transition={{ duration: 0.35, ease: "easeInOut" }}
-                className={`fixed top-0 left-0 right-0 z-[100] flex justify-between items-center px-8 md:px-16 py-6 md:py-8 transition-colors duration-500 ${isScrolled ? 'bg-[#050505]' : 'bg-transparent'}`}
+                className="fixed top-0 left-0 right-0 z-[100] flex justify-between items-center px-8 md:px-16 py-6 md:py-8 overflow-hidden isolate"
             >
-                <Link href="/" className="group flex flex-col" onClick={() => setIsMenuOpen(false)}>
+                <motion.div
+                    aria-hidden="true"
+                    initial={false}
+                    animate={{
+                        opacity: 1,
+                        backdropFilter: "blur(10px)",
+                    }}
+                    transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
+                    className="absolute inset-0 -z-10 bg-[#050505]/95"
+                />
+
+                <Link href="/" className="group relative z-10 flex flex-col" onClick={() => setIsMenuOpen(false)}>
                     <span className="text-xl md:text-2xl font-bold tracking-[0.3em] uppercase leading-none text-white">Akshay Menon</span>
                     <span className="text-[9px] md:text-[10px] tracking-[0.6em] uppercase text-gray-500 mt-2 group-hover:text-white transition-colors duration-500">
                         Writer | Director
                     </span>
                 </Link>
 
-                <nav className="flex items-center gap-12">
+                <nav className="relative z-10 flex items-center gap-12">
                     <div className="hidden md:flex items-center gap-10">
                         {navItems.map((item) => (
                             <Link

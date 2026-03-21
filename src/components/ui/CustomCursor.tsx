@@ -8,7 +8,7 @@ export default function CustomCursor() {
   const [isClicked, setIsClicked] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
   const [isHovering, setIsHovering] = useState(false);
-  const [isTouchDevice, setIsTouchDevice] = useState(false);
+  const [hasFinePointer, setHasFinePointer] = useState<boolean | null>(null);
   
   // Independent drops state array to allow continuous multi-clicking
   const [inkDrops, setInkDrops] = useState<{ id: number }[]>([]);
@@ -16,10 +16,18 @@ export default function CustomCursor() {
   const dropsRef = useRef<{ id: number }[]>([]);
 
   useEffect(() => {
-    // Only mount on devices with a fine pointer (desktops/laptops)
-    if (window.matchMedia("(pointer: coarse)").matches) {
-      setIsTouchDevice(true);
-      return;
+    const pointerQuery = window.matchMedia("(pointer: fine)");
+    const updatePointerType = () => {
+      setHasFinePointer(pointerQuery.matches);
+    };
+
+    updatePointerType();
+    pointerQuery.addEventListener("change", updatePointerType);
+
+    if (!pointerQuery.matches) {
+      return () => {
+        pointerQuery.removeEventListener("change", updatePointerType);
+      };
     }
 
     const onMouseMove = (e: MouseEvent) => {
@@ -65,32 +73,63 @@ export default function CustomCursor() {
     const onMouseUp = () => setIsClicked(false);
     
     // Hide when mouse leaves the viewport
-    const onMouseLeave = () => setIsVisible(false);
-    const onMouseEnter = () => setIsVisible(true);
+    const hideCursor = () => {
+      setIsVisible(false);
+      setIsHovering(false);
+      setIsClicked(false);
+      setPosition({ x: -100, y: -100 });
+    };
+
+    // Wait for a real in-page mousemove before showing the custom cursor again.
+    const resetCursorOnEnter = () => {
+      setIsVisible(false);
+      setIsHovering(false);
+      setPosition({ x: -100, y: -100 });
+    };
+
+    const onVisibilityChange = () => {
+      if (document.visibilityState === "hidden") {
+        hideCursor();
+      }
+    };
+
+    const onMouseOut = (e: MouseEvent) => {
+      // If relatedTarget is null, the mouse has left the window entirely
+      if (!e.relatedTarget) {
+        hideCursor();
+      }
+    };
 
     window.addEventListener("mousemove", onMouseMove);
     window.addEventListener("mousedown", onMouseDown);
     window.addEventListener("mouseup", onMouseUp);
-    document.addEventListener("mouseleave", onMouseLeave);
-    document.addEventListener("mouseenter", onMouseEnter);
+    window.addEventListener("blur", hideCursor);
+    window.addEventListener("mouseout", onMouseOut);
+    document.addEventListener("mouseleave", hideCursor);
+    document.addEventListener("mouseenter", resetCursorOnEnter);
+    document.addEventListener("visibilitychange", onVisibilityChange);
 
     return () => {
       window.removeEventListener("mousemove", onMouseMove);
       window.removeEventListener("mousedown", onMouseDown);
       window.removeEventListener("mouseup", onMouseUp);
-      document.removeEventListener("mouseleave", onMouseLeave);
-      document.removeEventListener("mouseenter", onMouseEnter);
+      window.removeEventListener("blur", hideCursor);
+      window.removeEventListener("mouseout", onMouseOut);
+      document.removeEventListener("mouseleave", hideCursor);
+      document.removeEventListener("mouseenter", resetCursorOnEnter);
+      document.removeEventListener("visibilitychange", onVisibilityChange);
+      pointerQuery.removeEventListener("change", updatePointerType);
     };
   }, []);
 
-  if (isTouchDevice) return null;
+  if (hasFinePointer !== true) return null;
 
   return (
     <motion.div
       className="fixed top-0 left-0 pointer-events-none z-99999"
       animate={{
-        x: position.x,
-        y: position.y,
+        x: position.x - 1, // Offset slightly to perfectly align the nib tip with the OS event point
+        y: position.y - 1,
         opacity: isVisible ? 1 : 0,
       }}
       transition={{
