@@ -60,8 +60,8 @@ export default function FeaturedProjects() {
                             className="space-y-6"
                         >
                             <div>
-                                <span className="text-[10px] uppercase tracking-[0.5em] text-zinc-500 block mb-2">{project.category}</span>
-                                <h3 className="text-3xl md:text-4xl font-bold tracking-tight uppercase leading-tight">
+                                <span className="text-[10px] uppercase tracking-[0.5em] text-[#db520d] block mb-2">{project.category}</span>
+                                <h3 className="text-3xl md:text-4xl font-bold tracking-tight uppercase leading-tight truncate">
                                     {project.title}
                                 </h3>
                             </div>
@@ -69,7 +69,7 @@ export default function FeaturedProjects() {
                                 {project.description}
                             </p>
                             <div className="pt-4">
-                                <Link href={`/work/${project.id}`} className="text-[10px] uppercase tracking-[0.4em] font-bold border-b border-zinc-700 pb-2 hover:border-white transition-colors duration-500">
+                                <Link href={`/work/${project.id}`} className="text-[10px] uppercase tracking-[0.4em] font-bold border-b border-white pb-2 hover:opacity-50 transition-all duration-500">
                                     Explore Project
                                 </Link>
                             </div>
@@ -85,7 +85,7 @@ export default function FeaturedProjects() {
                 >
                     {/* Synchronized Background Slide */}
                     <div
-                        className="absolute inset-0 bg-white transition-transform duration-500 ease-[0.16,1,0.3,1] translate-y-full group-hover:translate-y-0"
+                        className="absolute inset-0 bg-[#db520d] transition-transform duration-500 ease-[0.16,1,0.3,1] translate-y-full group-hover:translate-y-0"
                     />
 
                     {/* Rolling Text */}

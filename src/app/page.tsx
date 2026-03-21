@@ -43,7 +43,7 @@ export default function Home() {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
               >
-                <span className="text-[9px] sm:text-[10px] uppercase tracking-[0.45em] sm:tracking-[0.8em] text-zinc-500 mb-6 md:mb-8 block font-bold">
+                <span className="text-[9px] sm:text-[10px] uppercase tracking-[0.45em] sm:tracking-[0.8em] text-[#db520d] mb-6 md:mb-8 block font-bold">
                   About Me / 2026
                 </span>
                 <div className="mb-8 md:mb-12 max-w-full overflow-hidden">
@@ -107,7 +107,7 @@ export default function Home() {
                 className="space-y-2"
               >
                 <div className="text-[9px] uppercase tracking-[0.4em] text-zinc-600">Based in</div>
-                <div className="text-xs uppercase tracking-widest text-zinc-300">Mumbai / Kochi</div>
+                <div className="text-xs uppercase tracking-widest text-[#db520d]">Mumbai / Kochi</div>
               </motion.div>
             </div>
           </div>
@@ -118,7 +118,7 @@ export default function Home() {
           <div className="flex justify-between items-end border-b border-zinc-900 pb-12">
             <h2 className="text-4xl md:text-6xl font-black uppercase tracking-tighter">Selected <br />Works</h2>
             <div className="text-right pb-2">
-              <span className="text-[10px] uppercase tracking-[0.5em] text-zinc-600 block mb-2 font-bold">Refined Selection</span>
+              <span className="text-[10px] uppercase tracking-[0.5em] text-[#db520d] block mb-2 font-bold">Refined Selection</span>
               <span className="text-sm text-zinc-400 uppercase tracking-widest font-medium">Top Credits</span>
             </div>
           </div>

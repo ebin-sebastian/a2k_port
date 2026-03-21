@@ -32,10 +32,10 @@ export default function ProjectGrid() {
                                     <div className="text-zinc-600 group-hover:text-zinc-400 transition-colors text-xs uppercase tracking-widest font-medium">Coming Soon</div>
                                 </div>
                             )}
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                            <div className="absolute inset-0 bg-linear-to-t from-black/60 to-transparent" />
                         </div>
                         <div className="space-y-1">
-                            <h3 className="text-lg font-medium tracking-tight uppercase">{project.title}</h3>
+                            <h3 className="text-lg font-medium tracking-tight uppercase truncate">{project.title}</h3>
                             <p className="text-zinc-500 text-xs uppercase tracking-[0.2em] font-medium">{project.category}</p>
                         </div>
                     </motion.div>

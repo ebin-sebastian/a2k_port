@@ -91,7 +91,7 @@ export default function ProjectPage({ params }: { params: Promise<{ id: string }
                         <Link
                             href="/#work"
                             className="inline-flex items-center text-xs uppercase tracking-[0.3em] font-bold text-zinc-500 hover:text-white transition-colors duration-300"
-                        >
+>
                             <ArrowLeft className="w-4 h-4 mr-3" />
                             Back to Work
                         </Link>
@@ -104,7 +104,7 @@ export default function ProjectPage({ params }: { params: Promise<{ id: string }
                         transition={{ duration: 0.8, delay: 0.2 }}
                         className="mb-12"
                     >
-                        <span className="text-[10px] uppercase tracking-[0.5em] text-zinc-500 block mb-4">{project.category}</span>
+                        <span className="text-[10px] uppercase tracking-[0.5em] text-[#db520d] block mb-4">{project.category}</span>
                         <h1 className="text-4xl md:text-6xl font-bold tracking-tight uppercase leading-tight mb-6">
                             {project.title}
                         </h1>
@@ -137,13 +137,13 @@ export default function ProjectPage({ params }: { params: Promise<{ id: string }
                         className="grid grid-cols-1 md:grid-cols-3 gap-12"
                     >
                         <div className="md:col-span-2">
-                            <h3 className="text-xs uppercase tracking-[0.3em] font-bold text-white mb-4">About the Project</h3>
+                            <h3 className="text-xs uppercase tracking-[0.3em] font-bold text-[#db520d] mb-4">About the Project</h3>
                             <p className="text-zinc-400 leading-laxed max-w-2xl">
                                 {project.description}
                             </p>
                         </div>
                         <div>
-                            <h3 className="text-xs uppercase tracking-[0.3em] font-bold text-white mb-4">Role</h3>
+                            <h3 className="text-xs uppercase tracking-[0.3em] font-bold text-[#db520d] mb-4">Role</h3>
                             <p className="text-zinc-400 capitalize">{project.role}</p>
                         </div>
                     </motion.div>

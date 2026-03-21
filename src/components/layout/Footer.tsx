@@ -12,8 +12,8 @@ export default function Footer() {
                     </h2>
                     <div className="space-y-8">
                         <div className="group">
-                            <span className="text-[10px] uppercase tracking-[0.5em] text-zinc-600 block mb-4 font-bold">Inquiries</span>
-                            <a href="mailto:sendittoakshay@gmail.com" className="text-xl md:text-3xl font-light underline underline-offset-8 decoration-zinc-800 hover:decoration-white transition-all duration-700">
+                            <span className="text-[10px] uppercase tracking-[0.5em] text-[#db520d] block mb-4 font-bold">Inquiries</span>
+                            <a href="mailto:sendittoakshay@gmail.com" className="text-xl md:text-3xl font-light underline underline-offset-8 decoration-[#db520d]/30 hover:decoration-[#db520d] transition-all duration-700">
                                 sendittoakshay@gmail.com
                             </a>
                         </div>
@@ -21,7 +21,7 @@ export default function Footer() {
                 </div>
                 <div className="flex flex-col justify-between items-end text-right">
                     <div className="space-y-2">
-                        <span className="text-[10px] uppercase tracking-[0.5em] text-zinc-600 block font-bold">Social</span>
+                        <span className="text-[10px] uppercase tracking-[0.5em] text-[#db520d] block font-bold">Social</span>
                         <a href="https://www.instagram.com/akshaymen/" target="_blank" rel="noopener noreferrer" className="block text-xs uppercase tracking-widest text-zinc-400 hover:text-white transition-colors duration-500">Instagram</a>
                         <a href="https://vimeo.com/user175957220" target="_blank" rel="noopener noreferrer" className="block text-xs uppercase tracking-widest text-zinc-400 hover:text-white transition-colors duration-500">Vimeo</a>
                         <a href="https://www.linkedin.com/in/akshay-menon-135635190/" target="_blank" rel="noopener noreferrer" className="block text-xs uppercase tracking-widest text-zinc-400 hover:text-white transition-colors duration-500">LinkedIn</a>

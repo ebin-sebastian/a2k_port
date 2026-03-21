@@ -19,7 +19,7 @@ export default function ContactCTA() {
                 className="relative z-10 flex flex-col items-center gap-12"
             >
                 <div className="text-center">
-                    <span className="text-[10px] uppercase tracking-[0.6em] text-zinc-500 block mb-4 font-bold">
+                    <span className="text-[10px] uppercase tracking-[0.6em] text-[#db520d] block mb-4 font-bold">
                         Next Steps
                     </span>
                     <h2 className="text-3xl md:text-5xl font-bold uppercase tracking-tighter loading-none">
@@ -31,7 +31,7 @@ export default function ContactCTA() {
                     href="/contact"
                     className="group relative flex items-center justify-center w-56 h-56 md:w-64 md:h-64 rounded-full border border-zinc-800 hover:border-white transition-colors duration-700 bg-black/50 overflow-hidden"
                 >
-                    <div className="absolute inset-0 bg-white translate-y-full group-hover:translate-y-0 transition-transform duration-700 ease-[0.16,1,0.3,1] rounded-full" />
+                    <div className="absolute inset-0 bg-[#db520d] translate-y-full group-hover:translate-y-0 transition-transform duration-700 ease-[0.16,1,0.3,1] rounded-full" />
                     <div className="relative z-10 flex flex-col items-center justify-center gap-4 transition-colors duration-500 group-hover:text-black">
                         <span className="text-xs uppercase tracking-[0.4em] font-bold">
                             Contact Me

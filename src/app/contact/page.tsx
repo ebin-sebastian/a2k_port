@@ -19,7 +19,7 @@ export default function ContactPage() {
                         transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
                         className="lg:col-span-7"
                     >
-                        <span className="text-[10px] uppercase tracking-[0.5em] text-zinc-500 block mb-8 font-bold">
+                        <span className="text-[10px] uppercase tracking-[0.5em] text-[#db520d] block mb-8 font-bold">
                             Get in Touch
                         </span>
                         <h1 className="text-6xl md:text-8xl lg:text-9xl font-black uppercase tracking-tighter leading-[0.9] mb-16 text-white">
@@ -29,7 +29,7 @@ export default function ContactPage() {
 
                         <div className="space-y-12">
                             <div className="group">
-                                <span className="text-[10px] uppercase tracking-[0.5em] text-zinc-600 block mb-4 font-bold">Inquiries</span>
+                                <span className="text-[10px] uppercase tracking-[0.5em] text-[#db520d] block mb-4 font-bold">Inquiries</span>
                                 <a
                                     href="mailto:sendittoakshay@gmail.com"
                                     className="text-2xl md:text-4xl font-light underline underline-offset-8 decoration-zinc-800 hover:decoration-white transition-all duration-700 text-white"
@@ -39,7 +39,7 @@ export default function ContactPage() {
                             </div>
 
                             <div className="space-y-4">
-                                <span className="text-[10px] uppercase tracking-[0.5em] text-zinc-600 block mb-4 font-bold">Connect</span>
+                                <span className="text-[10px] uppercase tracking-[0.5em] text-[#db520d] block mb-4 font-bold">Connect</span>
                                 <div className="flex gap-8">
                                     <a href="https://www.instagram.com/akshaymen/" target="_blank" rel="noopener noreferrer" className="text-xs uppercase tracking-widest text-zinc-400 hover:text-white transition-colors duration-500">Instagram</a>
                                     <a href="https://vimeo.com/user175957220" target="_blank" rel="noopener noreferrer" className="text-xs uppercase tracking-widest text-zinc-400 hover:text-white transition-colors duration-500">Vimeo</a>

@@ -53,7 +53,11 @@ export default function CustomCursor() {
       setIsVisible(true);
     };
 
-    const onMouseDown = () => {
+    const onMouseDown = (e: MouseEvent) => {
+      if (e.button !== 0) {
+        return;
+      }
+
       setIsClicked(true);
       
       // Spawn a completely independent particle drop on every single click
@@ -100,11 +104,16 @@ export default function CustomCursor() {
       }
     };
 
+    const onContextMenu = () => {
+      hideCursor();
+    };
+
     window.addEventListener("mousemove", onMouseMove);
     window.addEventListener("mousedown", onMouseDown);
     window.addEventListener("mouseup", onMouseUp);
     window.addEventListener("blur", hideCursor);
     window.addEventListener("mouseout", onMouseOut);
+    window.addEventListener("contextmenu", onContextMenu);
     document.addEventListener("mouseleave", hideCursor);
     document.addEventListener("mouseenter", resetCursorOnEnter);
     document.addEventListener("visibilitychange", onVisibilityChange);
@@ -115,6 +124,7 @@ export default function CustomCursor() {
       window.removeEventListener("mouseup", onMouseUp);
       window.removeEventListener("blur", hideCursor);
       window.removeEventListener("mouseout", onMouseOut);
+      window.removeEventListener("contextmenu", onContextMenu);
       document.removeEventListener("mouseleave", hideCursor);
       document.removeEventListener("mouseenter", resetCursorOnEnter);
       document.removeEventListener("visibilitychange", onVisibilityChange);

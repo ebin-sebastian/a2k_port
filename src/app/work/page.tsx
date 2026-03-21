@@ -18,7 +18,7 @@ export default function WorkPage() {
                     className="flex flex-col md:flex-row justify-between items-start md:items-end gap-8 border-b border-zinc-900 pb-16"
                 >
                     <div>
-                        <span className="text-[10px] uppercase tracking-[0.5em] text-zinc-600 block mb-6 font-bold">Archives / Complete Catalog</span>
+                        <span className="text-[10px] uppercase tracking-[0.5em] text-[#db520d] block mb-6 font-bold">Archives / Complete Catalog</span>
                         <h1 className="text-6xl md:text-8xl font-black uppercase tracking-tighter leading-none">
                             All <br />Works
                         </h1>
