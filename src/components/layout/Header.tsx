@@ -15,6 +15,7 @@ export default function Header() {
     const pathname = usePathname();
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [isHidden, setIsHidden] = useState(false);
+    const [isScrolled, setIsScrolled] = useState(false);
     const { scrollY } = useScroll();
     const lastScrollY = useRef(0);
 
@@ -34,6 +35,7 @@ export default function Header() {
 
     // Smart Scroll Logic
     useMotionValueEvent(scrollY, "change", (latest) => {
+        setIsScrolled(latest > 50);
         const previous = lastScrollY.current;
         const diff = latest - previous;
 
@@ -54,12 +56,12 @@ export default function Header() {
                 }}
                 animate={isHidden ? "hidden" : "visible"}
                 transition={{ duration: 0.35, ease: "easeInOut" }}
-                className="fixed top-0 left-0 right-0 z-[100] flex justify-between items-center px-8 md:px-16 py-6 md:py-8 bg-[#050505]"
+                className={`fixed top-0 left-0 right-0 z-[100] flex justify-between items-center px-8 md:px-16 py-6 md:py-8 transition-colors duration-500 ${isScrolled ? 'bg-[#050505]' : 'bg-transparent'}`}
             >
                 <Link href="/" className="group flex flex-col" onClick={() => setIsMenuOpen(false)}>
                     <span className="text-xl md:text-2xl font-bold tracking-[0.3em] uppercase leading-none text-white">Akshay Menon</span>
                     <span className="text-[9px] md:text-[10px] tracking-[0.6em] uppercase text-gray-500 mt-2 group-hover:text-white transition-colors duration-500">
-                        Writing & Directing
+                        Writer | Director
                     </span>
                 </Link>
 

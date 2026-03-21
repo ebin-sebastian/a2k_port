@@ -13,16 +13,23 @@ export default function Home() {
 
       {/* Main Content Wrapper - Slides over fixed header */}
       <main className="relative z-20">
-        {/* Spacer to reveal fixed header initially */}
-        <div className="h-[120px] md:h-[160px] w-full" />
+
 
         {/* Cinematic Hero */}
         <section
           id="about"
-          className="relative min-h-[calc(100svh-120px)] md:min-h-[calc(100svh-160px)] w-full overflow-hidden flex items-center pt-5 pb-16 md:pt-8 md:pb-24 px-6 sm:px-8 md:px-16 bg-[#050505]"
+          className="relative h-svh w-full overflow-hidden flex items-center pt-[120px] md:pt-[160px] pb-16 px-6 sm:px-8 md:px-16 bg-[#050505]"
         >
-          {/* Cinematic Backdrop */}
-          <div className="absolute inset-0 bg-[#050505]" />
+          {/* Cinematic Backdrop Video */}
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="absolute inset-0 w-full h-full object-cover opacity-50 transition-opacity duration-1000 scale-[1.02]"
+          >
+            <source src="/bg.mp4" type="video/mp4" />
+          </video>
 
           {/* Complex Gradient Overlays */}
           <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-[#050505]/40 to-transparent" />
@@ -40,15 +47,36 @@ export default function Home() {
                   About Me / 2026
                 </span>
                 <div className="mb-8 md:mb-12 max-w-full overflow-hidden">
-                  <h1 className="text-[clamp(2.35rem,7.2vw,7.25rem)] font-bold leading-[0.98] sm:leading-[0.92] lg:leading-[0.88] tracking-[-0.02em] sm:tracking-[-0.03em] uppercase text-zinc-300">
-                    Films
-                  </h1>
-                  <h1 className="text-[clamp(2.35rem,7.2vw,7.25rem)] font-bold leading-[0.98] sm:leading-[0.92] lg:leading-[0.88] tracking-[-0.02em] sm:tracking-[-0.03em] uppercase text-zinc-400">
-                    Commercials
-                  </h1>
-                  <h1 className="text-[clamp(2.35rem,7.2vw,7.25rem)] font-bold leading-[0.98] sm:leading-[0.92] lg:leading-[0.88] tracking-[-0.02em] sm:tracking-[-0.03em] uppercase text-zinc-500">
-                    Documentaries
-                  </h1>
+                  <div className="overflow-hidden">
+                    <motion.h1
+                      initial={{ opacity: 0, y: "110%" }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 1.35, delay: 0.18, ease: [0.22, 1, 0.36, 1] }}
+                      className="text-[clamp(2.35rem,7.2vw,7.25rem)] font-bold leading-[0.98] sm:leading-[0.92] lg:leading-[0.88] tracking-[-0.02em] sm:tracking-[-0.03em] uppercase text-zinc-300"
+                    >
+                      Films
+                    </motion.h1>
+                  </div>
+                  <div className="overflow-hidden">
+                    <motion.h1
+                      initial={{ opacity: 0, y: "110%" }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 1.35, delay: 0.42, ease: [0.22, 1, 0.36, 1] }}
+                      className="text-[clamp(2.35rem,7.2vw,7.25rem)] font-bold leading-[0.98] sm:leading-[0.92] lg:leading-[0.88] tracking-[-0.02em] sm:tracking-[-0.03em] uppercase text-zinc-400"
+                    >
+                      Commercials
+                    </motion.h1>
+                  </div>
+                  <div className="overflow-hidden">
+                    <motion.h1
+                      initial={{ opacity: 0, y: "110%" }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 1.35, delay: 0.66, ease: [0.22, 1, 0.36, 1] }}
+                      className="text-[clamp(2.35rem,7.2vw,7.25rem)] font-bold leading-[0.98] sm:leading-[0.92] lg:leading-[0.88] tracking-[-0.02em] sm:tracking-[-0.03em] uppercase text-zinc-500"
+                    >
+                      Documentaries
+                    </motion.h1>
+                  </div>
                 </div>
               </motion.div>
 

@@ -30,6 +30,20 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Custom Fountain Pen Cursor - Handled via framer-motion in layout.tsx */
+@media (pointer: fine) {
+  body, body * {
+    cursor: none !important;
+  }
+  
+  /* Preserve standard text selection cursor for actual inputs for UX accessibility */
+  input:not([type="button"]):not([type="submit"]):not([type="reset"]):not([type="checkbox"]):not([type="radio"]), 
+  textarea, 
+  [contenteditable="true"] {
+    cursor: text !important;
+  }
+}
+
 /* Glassmorphism utility */
 .glass {
   background: var(--card-bg);
