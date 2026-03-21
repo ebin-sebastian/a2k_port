@@ -22,7 +22,7 @@ export default function ContactCTA() {
                     <span className="text-[10px] uppercase tracking-[0.6em] text-[#db520d] block mb-4 font-bold">
                         Next Steps
                     </span>
-                    <h2 className="text-3xl md:text-5xl font-bold uppercase tracking-tighter loading-none">
+                    <h2 className="text-3xl text-zinc-300 md:text-5xl font-bold uppercase tracking-tighter loading-none">
                         Get In Touch
                     </h2>
                 </div>

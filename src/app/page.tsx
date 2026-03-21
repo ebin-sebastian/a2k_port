@@ -44,7 +44,7 @@ export default function Home() {
                 transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
               >
                 <span className="text-[9px] sm:text-[10px] uppercase tracking-[0.45em] sm:tracking-[0.8em] text-[#db520d] mb-6 md:mb-8 block font-bold">
-                  About Me / 2026
+                  About Me
                 </span>
                 <div className="mb-8 md:mb-12 max-w-full overflow-hidden">
                   <div className="overflow-hidden">

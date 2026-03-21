@@ -43,7 +43,7 @@ export default function FeaturedProjects() {
                             {/* Cinematic Typography Reveal */}
                             <div className="absolute inset-0 flex items-center justify-center pointer-events-none overflow-hidden">
                                 <div className="flex items-center justify-center translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-1000 ease-[0.16,1,0.3,1]">
-                                    <span className="text-[12px] md:text-[14px] uppercase tracking-[1em] font-bold text-white ml-[1em]">
+                                    <span className="text-[12px] md:text-[14px] uppercase tracking-[1em] font-bold text-[#db520d] ml-[1em]">
                                         Play
                                     </span>
                                 </div>
@@ -61,7 +61,7 @@ export default function FeaturedProjects() {
                         >
                             <div>
                                 <span className="text-[10px] uppercase tracking-[0.5em] text-[#db520d] block mb-2">{project.category}</span>
-                                <h3 className="text-3xl md:text-4xl font-bold tracking-tight uppercase leading-tight truncate">
+                                <h3 className="text-3xl md:text-4xl font-bold tracking-tight uppercase leading-tight">
                                     {project.title}
                                 </h3>
                             </div>

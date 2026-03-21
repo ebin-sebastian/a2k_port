@@ -78,7 +78,7 @@ export default function Header() {
                 <Link href="/" className="group relative z-10 flex flex-col" onClick={() => setIsMenuOpen(false)}>
                     <span className="text-xl md:text-2xl font-bold tracking-[0.3em] uppercase leading-none text-white">Akshay Menon</span>
                     <span className="text-[9px] md:text-[10px] tracking-[0.6em] uppercase text-zinc-500 mt-2">
-                        Direction & Writing
+                        Director | Writer
                     </span>
                 </Link>
 
@@ -147,9 +147,9 @@ export default function Header() {
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
                             transition={{ delay: 0.8 }}
-                            className="absolute bottom-12 text-[10px] tracking-[0.5em] text-[#db520d] uppercase"
+                            className="absolute bottom-12 text-[10px] tracking-[0.5em] text-[#db520d] uppercase font-bold"
                         >
-                            Mumbai / Global
+                            Mumbai / Kochi
                         </motion.div>
                     </motion.div>
                 )}
