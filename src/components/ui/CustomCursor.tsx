@@ -4,7 +4,7 @@ import { useEffect, useState, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 export default function CustomCursor() {
-  const [position, setPosition] = useState({ x: -100, y: -100 });
+  const cursorRef = useRef<HTMLDivElement | null>(null);
   const [isClicked, setIsClicked] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
   const [isHovering, setIsHovering] = useState(false);
@@ -31,7 +31,9 @@ export default function CustomCursor() {
     }
 
     const onMouseMove = (e: MouseEvent) => {
-      setPosition({ x: e.clientX, y: e.clientY });
+      if (cursorRef.current) {
+        cursorRef.current.style.transform = `translate3d(${e.clientX - 1}px, ${e.clientY - 1}px, 0)`;
+      }
       
       if (e.target instanceof HTMLElement) {
         const tag = e.target.tagName.toLowerCase();
@@ -81,14 +83,18 @@ export default function CustomCursor() {
       setIsVisible(false);
       setIsHovering(false);
       setIsClicked(false);
-      setPosition({ x: -100, y: -100 });
+      if (cursorRef.current) {
+        cursorRef.current.style.transform = `translate3d(-100px, -100px, 0)`;
+      }
     };
 
     // Wait for a real in-page mousemove before showing the custom cursor again.
     const resetCursorOnEnter = () => {
       setIsVisible(false);
       setIsHovering(false);
-      setPosition({ x: -100, y: -100 });
+      if (cursorRef.current) {
+        cursorRef.current.style.transform = `translate3d(-100px, -100px, 0)`;
+      }
     };
 
     const onVisibilityChange = () => {
@@ -135,17 +141,14 @@ export default function CustomCursor() {
   if (hasFinePointer !== true) return null;
 
   return (
-    <motion.div
+    <div
+      ref={cursorRef}
       className="fixed top-0 left-0 pointer-events-none z-99999"
-      animate={{
-        x: position.x - 1, // Offset slightly to perfectly align the nib tip with the OS event point
-        y: position.y - 1,
+      style={{
+        transform: "translate3d(-100px, -100px, 0)",
         opacity: isVisible ? 1 : 0,
-      }}
-      transition={{
-        type: "tween",
-        ease: "linear",
-        duration: 0, // perfect 0-latency tracking
+        transition: "opacity 0.15s ease-out",
+        willChange: "transform, opacity",
       }}
     >
       <div className="relative">
@@ -282,6 +285,6 @@ export default function CustomCursor() {
           </svg>
         </motion.div>
       </div>
-    </motion.div>
+    </div>
   );
 }

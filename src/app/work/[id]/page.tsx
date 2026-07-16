@@ -55,6 +55,21 @@ export default function ProjectPage({ params }: { params: Promise<{ id: string }
         } : null;
     }, [provider, videoId]);
 
+    const externalPlatform = useMemo(() => {
+        if (!project.videoUrl || provider) return "";
+        try {
+            const url = new URL(project.videoUrl);
+            const host = url.hostname.replace("www.", "");
+            const parts = host.split(".");
+            if (parts.length > 0) {
+                return parts[0].charAt(0).toUpperCase() + parts[0].slice(1);
+            }
+            return host;
+        } catch {
+            return "External Site";
+        }
+    }, [project.videoUrl, provider]);
+
     const plyrOptions = useMemo(() => {
         return {
             autoplay: false,
@@ -64,7 +79,8 @@ export default function ProjectPage({ params }: { params: Promise<{ id: string }
                 noCookie: true,
                 rel: 0,
                 showinfo: 0,
-                iv_load_policy: 3
+                iv_load_policy: 3,
+                modestbranding: 1
             },
             vimeo: {
                 byline: false,
@@ -122,6 +138,25 @@ export default function ProjectPage({ params }: { params: Promise<{ id: string }
                                 source={plyrSource}
                                 options={plyrOptions}
                             />
+                        ) : project.videoUrl ? (
+                            <div className="w-full h-full flex flex-col items-center justify-center bg-zinc-950/80 border border-zinc-900 text-center p-8 relative overflow-hidden group">
+                                <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(219,82,13,0.08)_0%,transparent_70%)] pointer-events-none" />
+                                
+                                <span className="text-[10px] uppercase tracking-[0.4em] text-[#db520d] mb-4 font-bold relative z-10">
+                                    External Platform
+                                </span>
+                                <h3 className="text-2xl md:text-3xl font-black uppercase tracking-wider text-white mb-8 max-w-md relative z-10">
+                                    Available on {externalPlatform}
+                                </h3>
+                                <a
+                                    href={project.videoUrl}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="relative z-10 px-10 py-4 border border-[#db520d] text-white hover:bg-[#db520d] hover:text-black transition-all duration-500 text-[10px] uppercase tracking-[0.3em] font-bold rounded-sm overflow-hidden"
+                                >
+                                    Watch Film
+                                </a>
+                            </div>
                         ) : (
                             <div className="w-full h-full flex items-center justify-center text-zinc-600 uppercase tracking-widest text-xs">
                                 No Video Available

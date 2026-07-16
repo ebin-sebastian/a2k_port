@@ -76,9 +76,15 @@ export default function Header() {
                 />
 
                 <Link href="/" className="group relative z-10 flex flex-col" onClick={() => setIsMenuOpen(false)}>
-                    <span className="text-xl md:text-2xl font-bold tracking-[0.3em] uppercase leading-none text-white">Akshay Menon</span>
-                    <span className="text-[9px] md:text-[10px] tracking-[0.6em] uppercase text-zinc-500 mt-2">
-                        Director | Writer
+                    <div className="flex items-center gap-3">
+                        <span className="text-3xl md:text-4xl font-logo text-white leading-none">a2k</span>
+                        <div className="h-5 w-px bg-zinc-800 hidden sm:block self-center" />
+                        <span className="text-xs md:text-sm uppercase tracking-widest text-zinc-400 font-bold hidden sm:inline-block">
+                            <span className="text-[#db520d]">A</span>achath <span className="text-[#db520d]">Ak</span>shay Menon
+                        </span>
+                    </div>
+                    <span className="text-[9px] md:text-[10px] tracking-[0.1em] sm:tracking-[0.25em] md:tracking-[0.35em] uppercase text-[#db520d] font-bold mt-2">
+                        Films | Commercials | Documentaries | Music Videos
                     </span>
                 </Link>
 
@@ -88,10 +94,10 @@ export default function Header() {
                             <Link
                                 key={item.name}
                                 href={item.href}
-                                className="text-[10px] font-bold uppercase tracking-[0.4em] text-gray-400 hover:text-white transition-all duration-500 relative py-2 group"
+                                className="text-[10px] font-bold uppercase tracking-[0.4em] text-gray-400 hover:text-[#db520d] transition-all duration-500 relative py-2 group"
                             >
                                 {item.name}
-                                <span className="absolute bottom-0 left-0 w-0 h-px bg-white transition-all duration-500 group-hover:w-full" />
+                                <span className="absolute bottom-0 left-0 w-0 h-px bg-[#db520d] transition-all duration-500 group-hover:w-full" />
                             </Link>
                         ))}
                     </div>
@@ -135,7 +141,7 @@ export default function Header() {
                                     <Link
                                         href={item.href}
                                         onClick={() => setIsMenuOpen(false)}
-                                        className="text-4xl font-bold uppercase tracking-[0.2em] text-zinc-500 hover:text-white transition-colors duration-500"
+                                        className="text-4xl font-bold uppercase tracking-[0.2em] text-zinc-500 hover:text-[#db520d] transition-colors duration-500"
                                     >
                                         {item.name}
                                     </Link>

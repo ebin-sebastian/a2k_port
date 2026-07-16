@@ -46,36 +46,24 @@ export default function Home() {
                 <span className="text-[9px] sm:text-[10px] uppercase tracking-[0.45em] sm:tracking-[0.8em] text-[#db520d] mb-6 md:mb-8 block font-bold">
                   About Me
                 </span>
-                <div className="mb-8 md:mb-12 max-w-full overflow-hidden">
-                  <div className="overflow-hidden">
+                <div className="mb-8 md:mb-12 max-w-full">
+                  <div>
                     <motion.h1
-                      initial={{ opacity: 0, y: "110%" }}
+                      initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 1.35, delay: 0.18, ease: [0.22, 1, 0.36, 1] }}
-                      className="text-[clamp(2.35rem,7.2vw,7.25rem)] font-bold leading-[0.98] sm:leading-[0.92] lg:leading-[0.88] tracking-[-0.02em] sm:tracking-[-0.03em] uppercase text-zinc-300"
+                      transition={{ duration: 1.35, ease: [0.22, 1, 0.36, 1] }}
+                      className="text-[clamp(8rem,24vw,18rem)] font-logo leading-[0.8] text-white"
                     >
-                      Films
+                      a2k
                     </motion.h1>
-                  </div>
-                  <div className="overflow-hidden">
-                    <motion.h1
-                      initial={{ opacity: 0, y: "110%" }}
+                    <motion.p
+                      initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 1.35, delay: 0.42, ease: [0.22, 1, 0.36, 1] }}
-                      className="text-[clamp(2.35rem,7.2vw,7.25rem)] font-bold leading-[0.98] sm:leading-[0.92] lg:leading-[0.88] tracking-[-0.02em] sm:tracking-[-0.03em] uppercase text-zinc-400"
+                      transition={{ duration: 1.35, delay: 0.25, ease: [0.22, 1, 0.36, 1] }}
+                      className="text-xs sm:text-sm uppercase tracking-[0.5em] text-zinc-400 font-bold mt-4"
                     >
-                      Commercials
-                    </motion.h1>
-                  </div>
-                  <div className="overflow-hidden">
-                    <motion.h1
-                      initial={{ opacity: 0, y: "110%" }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 1.35, delay: 0.66, ease: [0.22, 1, 0.36, 1] }}
-                      className="text-[clamp(2.35rem,7.2vw,7.25rem)] font-bold leading-[0.98] sm:leading-[0.92] lg:leading-[0.88] tracking-[-0.02em] sm:tracking-[-0.03em] uppercase text-zinc-500"
-                    >
-                      Documentaries
-                    </motion.h1>
+                      Writer / Director
+                    </motion.p>
                   </div>
                 </div>
               </motion.div>

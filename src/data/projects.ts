@@ -15,7 +15,7 @@ export const projects: Project[] = [
         id: "alboe",
         title: "ALBOE IS COMING - ARE YOU READY?",
         category: "Direction & Writing",
-        description: "A high-energy visual exploration for the ALBOE project.",
+        description: "A campaign film for ALBOE by the Beach, a music festival in Varkala, Kerala. Created as the festival’s official promotional film, the ad introduces the world of ALBOE and its upcoming edition.",
         role: "Direction & Writing",
         videoUrl: "https://www.youtube.com/watch?v=whLpaJS3ggM",
         thumbnailUrl: "/assets/videos/aloe264.mp4",
@@ -57,7 +57,7 @@ export const projects: Project[] = [
         category: "Direction & Writing",
         description: "Conceptual visual project focusing on artistic story-telling.",
         role: "Direction & Writing",
-        videoUrl: "",
+        videoUrl: "https://www.epicon.in/movies/jerryland",
         thumbnailUrl: ""
     },
     {
@@ -66,7 +66,7 @@ export const projects: Project[] = [
         category: "Direction & Writing",
         description: "Dynamic commercial featuring Divya Prabha, focusing on the cinematic capabilities of the Vivo V50.",
         role: "Direction & Writing",
-        videoUrl: "",
+        videoUrl: "https://www.instagram.com/reels/DGK0awjKIKU/",
         thumbnailUrl: ""
     },
     {
@@ -85,7 +85,7 @@ export const projects: Project[] = [
         category: "Direction & Writing",
         description: "Impactful educational content developed for Bodhini NGO to promote cyber safety.",
         role: "Direction & Writing",
-        videoUrl: "",
+        videoUrl: "https://www.youtube.com/watch?v=E3LHVkrcOzc",
         thumbnailUrl: ""
     },
     {
@@ -94,7 +94,7 @@ export const projects: Project[] = [
         category: "Direction & Writing",
         description: "Sensitive and informative content focusing on body safety for children.",
         role: "Direction & Writing",
-        videoUrl: "",
+        videoUrl: "https://www.youtube.com/watch?si=JbhRSeSv4OGjmkMz&v=-mAM4FS9cAY&feature=youtu.be",
         thumbnailUrl: ""
     },
     {
@@ -103,7 +103,7 @@ export const projects: Project[] = [
         category: "Direction & Writing",
         description: "Conceptual film project featuring Anna Ben, exploring themes of restoration and growth.",
         role: "Direction & Writing",
-        videoUrl: "",
+        videoUrl: "https://www.youtube.com/watch?v=RQKuwY6LgPU",
         thumbnailUrl: ""
     }
 ];

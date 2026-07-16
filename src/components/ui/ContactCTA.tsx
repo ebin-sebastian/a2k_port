@@ -29,9 +29,9 @@ export default function ContactCTA() {
 
                 <Link
                     href="/contact"
-                    className="group relative flex items-center justify-center w-56 h-56 md:w-64 md:h-64 rounded-full border border-zinc-800 hover:border-white transition-colors duration-700 bg-black/50 overflow-hidden"
+                    className="group relative flex items-center justify-center w-56 h-56 md:w-64 md:h-64 rounded-full border border-zinc-800 hover:border-white transition-colors duration-700 bg-black/50 overflow-hidden transform-gpu isolate"
                 >
-                    <div className="absolute inset-0 bg-[#db520d] translate-y-full group-hover:translate-y-0 transition-transform duration-700 ease-[0.16,1,0.3,1] rounded-full" />
+                    <div className="absolute inset-0 bg-[#db520d] translate-y-full group-hover:translate-y-0 transition-transform duration-700 ease-[0.16,1,0.3,1] rounded-full transform-gpu" />
                     <div className="relative z-10 flex flex-col items-center justify-center gap-4 transition-colors duration-500 group-hover:text-black">
                         <span className="text-xs uppercase tracking-[0.4em] font-bold">
                             Contact Me
