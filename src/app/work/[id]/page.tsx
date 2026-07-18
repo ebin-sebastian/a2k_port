@@ -185,7 +185,7 @@ export default function ProjectPage({ params }: { params: Promise<{ id: string }
                             {project.duration && (
                                 <div>
                                     <h3 className="text-xs uppercase tracking-[0.3em] font-bold text-[#db520d] mb-4">Duration</h3>
-                                    <p className="text-zinc-400">{project.duration}</p>
+                                    <p className="text-[#db520d] font-mono">{project.duration}</p>
                                 </div>
                             )}
                         </div>

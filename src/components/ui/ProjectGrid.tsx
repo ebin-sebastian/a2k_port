@@ -37,7 +37,7 @@ export default function ProjectGrid() {
                                     </div>
                                 )}
                                 {project.duration && (
-                                    <div className="absolute bottom-3 right-3 z-10 bg-black/75 backdrop-blur-[2px] px-2 py-0.5 rounded text-[10px] font-mono text-zinc-300 tracking-wider border border-zinc-800/30">
+                                    <div className="absolute bottom-3 right-3 z-10 bg-black/75 backdrop-blur-[2px] px-2 py-0.5 rounded text-[10px] font-mono text-[#db520d] tracking-wider border border-zinc-800/30">
                                         {project.duration}
                                     </div>
                                 )}

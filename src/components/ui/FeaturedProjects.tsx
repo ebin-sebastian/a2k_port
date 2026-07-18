@@ -49,7 +49,7 @@ export default function FeaturedProjects() {
                                 </div>
                             </div>
                             {project.duration && (
-                                <div className="absolute bottom-4 right-4 z-10 bg-black/75 backdrop-blur-[2px] px-2.5 py-1 rounded text-[10px] font-mono text-zinc-300 tracking-wider border border-zinc-800/30">
+                                <div className="absolute bottom-4 right-4 z-10 bg-black/75 backdrop-blur-[2px] px-2.5 py-1 rounded text-[10px] font-mono text-[#db520d] tracking-wider border border-zinc-800/30">
                                     {project.duration}
                                 </div>
                             )}
@@ -70,9 +70,6 @@ export default function FeaturedProjects() {
                                     {project.title}
                                 </h3>
                             </div>
-                            <p className="text-zinc-400 text-sm leading-relaxed max-w-sm ml-auto mr-auto lg:ml-0 lg:mr-0">
-                                {project.description}
-                            </p>
                             <div className="pt-4">
                                 <Link href={`/work/${project.id}`} className="text-[10px] uppercase tracking-[0.4em] font-bold border-b border-white pb-2 hover:opacity-50 transition-all duration-500">
                                     Explore Project
