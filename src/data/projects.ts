@@ -8,6 +8,7 @@ export interface Project {
     thumbnailUrl: string;
     metadata?: string;
     featured?: boolean;
+    duration?: string;
 }
 
 export const projects: Project[] = [
@@ -19,7 +20,8 @@ export const projects: Project[] = [
         role: "Direction & Writing",
         videoUrl: "https://www.youtube.com/watch?v=whLpaJS3ggM",
         thumbnailUrl: "/assets/videos/aloe264.mp4",
-        featured: true
+        featured: true,
+        duration: "0:34"
     },
     {
         id: "tinkerhub",
@@ -29,7 +31,8 @@ export const projects: Project[] = [
         role: "Direction & Writing",
         videoUrl: "https://www.youtube.com/watch?v=xyyKzKckbxE",
         thumbnailUrl: "/assets/videos/tinkerhub264.mp4",
-        featured: true
+        featured: true,
+        duration: "10:38"
     },
     {
         id: "instruo",
@@ -39,7 +42,8 @@ export const projects: Project[] = [
         role: "Direction & Writing",
         videoUrl: "https://vimeo.com/1083095326",
         thumbnailUrl: "/assets/videos/instruo264.mp4",
-        featured: true
+        featured: true,
+        duration: "1:21"
     },
     {
         id: "rani-pink",
@@ -49,7 +53,8 @@ export const projects: Project[] = [
         role: "Direction",
         videoUrl: "https://vimeo.com/818729167",
         thumbnailUrl: "/assets/videos/rani264.mp4",
-        featured: true
+        featured: true,
+        duration: "1:25"
     },
     {
         id: "jerryland",
@@ -58,7 +63,8 @@ export const projects: Project[] = [
         description: "Conceptual visual project focusing on artistic story-telling.",
         role: "Direction & Writing",
         videoUrl: "https://www.epicon.in/movies/jerryland",
-        thumbnailUrl: ""
+        thumbnailUrl: "",
+        duration: "14:00"
     },
     {
         id: "vivo-v50",
@@ -67,7 +73,8 @@ export const projects: Project[] = [
         description: "Dynamic commercial featuring Divya Prabha, focusing on the cinematic capabilities of the Vivo V50.",
         role: "Direction & Writing",
         videoUrl: "https://www.instagram.com/reels/DGK0awjKIKU/",
-        thumbnailUrl: ""
+        thumbnailUrl: "",
+        duration: "1:00"
     },
     {
         id: "prince-of-noodles",
@@ -77,7 +84,8 @@ export const projects: Project[] = [
         role: "Direction",
         videoUrl: "https://www.youtube.com/watch?v=lE82EH7bsfo",
         thumbnailUrl: "/assets/videos/noodles264.mp4",
-        featured: true
+        featured: true,
+        duration: "1:48"
     },
     {
         id: "cyber-safety",
@@ -86,7 +94,8 @@ export const projects: Project[] = [
         description: "Impactful educational content developed for Bodhini NGO to promote cyber safety.",
         role: "Direction & Writing",
         videoUrl: "https://www.youtube.com/watch?v=E3LHVkrcOzc",
-        thumbnailUrl: ""
+        thumbnailUrl: "",
+        duration: "5:32"
     },
     {
         id: "body-safety",
@@ -95,7 +104,8 @@ export const projects: Project[] = [
         description: "Sensitive and informative content focusing on body safety for children.",
         role: "Direction & Writing",
         videoUrl: "https://www.youtube.com/watch?si=JbhRSeSv4OGjmkMz&v=-mAM4FS9cAY&feature=youtu.be",
-        thumbnailUrl: ""
+        thumbnailUrl: "",
+        duration: "3:34"
     },
     {
         id: "healing",
@@ -104,7 +114,8 @@ export const projects: Project[] = [
         description: "Conceptual film project featuring Anna Ben, exploring themes of restoration and growth.",
         role: "Direction & Writing",
         videoUrl: "https://www.youtube.com/watch?v=RQKuwY6LgPU",
-        thumbnailUrl: ""
+        thumbnailUrl: "",
+        duration: "2:54"
     }
 ];
 

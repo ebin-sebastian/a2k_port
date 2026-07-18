@@ -48,6 +48,11 @@ export default function FeaturedProjects() {
                                     </span>
                                 </div>
                             </div>
+                            {project.duration && (
+                                <div className="absolute bottom-4 right-4 z-10 bg-black/75 backdrop-blur-[2px] px-2.5 py-1 rounded text-[10px] font-mono text-zinc-300 tracking-wider border border-zinc-800/30">
+                                    {project.duration}
+                                </div>
+                            )}
                         </Link>
                     </div>
 

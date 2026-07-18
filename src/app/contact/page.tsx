@@ -24,7 +24,7 @@ export default function ContactPage() {
                         </span>
                         <h1 className="text-6xl md:text-8xl lg:text-9xl font-black uppercase tracking-tighter leading-[0.9] mb-16 text-white">
                             Let's Create <br />
-                            <span className="text-zinc-700">Cinema.</span>
+                            <span className="text-zinc-700">Together.</span>
                         </h1>
 
                         <div className="space-y-12">

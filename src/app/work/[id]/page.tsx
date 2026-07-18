@@ -177,9 +177,17 @@ export default function ProjectPage({ params }: { params: Promise<{ id: string }
                                 {project.description}
                             </p>
                         </div>
-                        <div>
-                            <h3 className="text-xs uppercase tracking-[0.3em] font-bold text-[#db520d] mb-4">Role</h3>
-                            <p className="text-zinc-400 capitalize">{project.role}</p>
+                        <div className="space-y-8">
+                            <div>
+                                <h3 className="text-xs uppercase tracking-[0.3em] font-bold text-[#db520d] mb-4">Role</h3>
+                                <p className="text-zinc-400 capitalize">{project.role}</p>
+                            </div>
+                            {project.duration && (
+                                <div>
+                                    <h3 className="text-xs uppercase tracking-[0.3em] font-bold text-[#db520d] mb-4">Duration</h3>
+                                    <p className="text-zinc-400">{project.duration}</p>
+                                </div>
+                            )}
                         </div>
                     </motion.div>
 

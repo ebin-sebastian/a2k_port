@@ -75,16 +75,11 @@ export default function Header() {
                     className="absolute inset-0 -z-10 bg-[#050505]/95"
                 />
 
-                <Link href="/" className="group relative z-10 flex flex-col" onClick={() => setIsMenuOpen(false)}>
-                    <div className="flex items-center gap-3">
-                        <span className="text-3xl md:text-4xl font-logo text-white leading-none">a2k</span>
-                        <div className="h-5 w-px bg-zinc-800 hidden sm:block self-center" />
-                        <span className="text-xs md:text-sm uppercase tracking-widest text-zinc-400 font-bold hidden sm:inline-block">
-                            <span className="text-[#db520d]">A</span>achath <span className="text-[#db520d]">Ak</span>shay Menon
-                        </span>
-                    </div>
-                    <span className="text-[9px] md:text-[10px] tracking-[0.1em] sm:tracking-[0.25em] md:tracking-[0.35em] uppercase text-[#db520d] font-bold mt-2">
-                        Films | Commercials | Documentaries | Music Videos
+                <Link href="/" className="group relative z-10 flex items-center gap-3" onClick={() => setIsMenuOpen(false)}>
+                    <span className="text-3xl md:text-4xl font-logo text-white leading-none">a2k</span>
+                    <div className="h-5 w-px bg-zinc-800 hidden sm:block self-center" />
+                    <span className="text-sm md:text-base uppercase tracking-wider font-bold text-zinc-400 hidden sm:inline-block">
+                        <span className="text-[#db520d]">A</span>achath <span className="text-[#db520d]">Ak</span>shay Menon
                     </span>
                 </Link>
 

@@ -1,12 +1,99 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
+import { useState, useEffect } from "react";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import FeaturedProjects from "@/components/ui/FeaturedProjects";
 import ContactCTA from "@/components/ui/ContactCTA";
 
+const categories = ["Films", "Commercials", "Documentaries", "Music Video"];
+
+const CHARS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
+function WordAnimator({ word }: { word: string }) {
+  const target = Array.from(word);
+  const [display, setDisplay] = useState<string[]>(target);
+  const [settled, setSettled] = useState<boolean[]>(target.map(() => true));
+
+  useEffect(() => {
+    const letters = Array.from(word);
+
+    setDisplay(letters.map(l => l === " " ? " " : CHARS[Math.floor(Math.random() * CHARS.length)]));
+    setSettled(letters.map(() => false));
+
+    const timeouts: ReturnType<typeof setTimeout>[] = [];
+
+    letters.forEach((letter, i) => {
+      let iterations = 0;
+      const maxIterations = 3 + i;
+
+      const start = setTimeout(() => {
+        const interval = setInterval(() => {
+          setDisplay(prev => {
+            const next = [...prev];
+            if (iterations >= maxIterations) {
+              next[i] = letter === " " ? " " : letter;
+              setSettled(s => { const ns = [...s]; ns[i] = true; return ns; });
+              clearInterval(interval);
+            } else {
+              next[i] = letter === " " ? " " : CHARS[Math.floor(Math.random() * CHARS.length)];
+              iterations++;
+            }
+            return next;
+          });
+        }, 80);
+      }, i * 80);
+
+      timeouts.push(start);
+    });
+
+    return () => timeouts.forEach(clearTimeout);
+  }, [word]);
+
+  return (
+    <span style={{ display: "inline-flex" }}>
+      {target.map((targetChar, i) => (
+        // Each slot is sized by its invisible target letter — no overflow possible
+        <span
+          key={i}
+          style={{ display: "inline-block", position: "relative", textAlign: "center" }}
+        >
+          {/* Ghost target letter — sets the exact slot width */}
+          <span style={{ visibility: "hidden" }}>
+            {targetChar === " " ? "\u00A0" : targetChar}
+          </span>
+          {/* Scrambled char centred inside the slot */}
+          <span style={{
+            position: "absolute",
+            left: "50%",
+            top: "50%",
+            transform: "translate(-50%, -50%)",
+            opacity: settled[i] ? 1 : 0.35,
+            transition: "opacity 0.2s ease",
+            whiteSpace: "nowrap",
+          }}>
+            {(display[i] ?? targetChar) === " " ? "\u00A0" : (display[i] ?? targetChar)}
+          </span>
+        </span>
+      ))}
+    </span>
+  );
+}
+
+
+
+
+
 export default function Home() {
+  const [catIndex, setCatIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCatIndex((prev) => (prev + 1) % categories.length);
+    }, 3000);
+    return () => clearInterval(interval);
+  }, []);
   return (
     <>
       <Header />
@@ -43,28 +130,26 @@ export default function Home() {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
               >
-                <span className="text-[9px] sm:text-[10px] uppercase tracking-[0.45em] sm:tracking-[0.8em] text-[#db520d] mb-6 md:mb-8 block font-bold">
-                  About Me
-                </span>
                 <div className="mb-8 md:mb-12 max-w-full">
-                  <div>
-                    <motion.h1
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 1.35, ease: [0.22, 1, 0.36, 1] }}
-                      className="text-[clamp(8rem,24vw,18rem)] font-logo leading-[0.8] text-white"
-                    >
-                      a2k
-                    </motion.h1>
-                    <motion.p
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 1.35, delay: 0.25, ease: [0.22, 1, 0.36, 1] }}
-                      className="text-xs sm:text-sm uppercase tracking-[0.5em] text-zinc-400 font-bold mt-4"
-                    >
-                      Writer / Director
-                    </motion.p>
-                  </div>
+                  <span className="text-[9px] sm:text-[10px] uppercase tracking-[0.45em] sm:tracking-[0.8em] text-[#db520d] block font-bold mb-8 md:mb-12">
+                    About Me
+                  </span>
+                  <motion.h1
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 1.35, ease: [0.22, 1, 0.36, 1] }}
+                    className="text-[clamp(8rem,24vw,18rem)] font-logo leading-[0.7] text-white"
+                  >
+                    a2k
+                  </motion.h1>
+                  <motion.p
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 1.35, delay: 0.25, ease: [0.22, 1, 0.36, 1] }}
+                    className="text-xs sm:text-sm uppercase tracking-[0.5em] text-zinc-400 font-bold mt-8 md:mt-12"
+                  >
+                    Writer / Director
+                  </motion.p>
                 </div>
               </motion.div>
 
@@ -105,8 +190,13 @@ export default function Home() {
         <div className="px-8 md:px-16 pt-32 bg-[#050505]">
           <div className="flex justify-between items-end border-b border-zinc-900 pb-12">
             <h2 className="text-4xl md:text-6xl font-black uppercase tracking-tighter">Selected <br />Works</h2>
-            <div className="text-right pb-2">
-              <span className="text-[10px] uppercase tracking-[0.5em] text-[#db520d] block mb-2 font-bold">Refined Selection</span>
+            <div className="text-right pb-2 min-h-[48px] flex flex-col justify-end items-end">
+              <span className="text-[10px] md:text-[11px] lg:text-xs uppercase tracking-[0.2em] text-[#db520d] hidden md:block mb-2 font-bold">
+                Films | Commercials | Documentaries | Music Video
+              </span>
+              <span className="text-[10px] uppercase tracking-[0.2em] text-[#db520d] block md:hidden mb-2 font-bold h-[15px]">
+                <WordAnimator word={categories[catIndex]} />
+              </span>
               <span className="text-sm text-zinc-400 uppercase tracking-widest font-medium">Top Credits</span>
             </div>
           </div>

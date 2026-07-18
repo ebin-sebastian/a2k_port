@@ -19,14 +19,24 @@ export default function Footer() {
                         </div>
                     </div>
                 </div>
-                <div className="flex flex-col justify-between items-end text-right">
-                    <div className="space-y-2">
-                        <span className="text-[10px] uppercase tracking-[0.5em] text-[#db520d] block font-bold">Social</span>
-                        <a href="https://www.instagram.com/akshaymen/" target="_blank" rel="noopener noreferrer" className="block text-xs uppercase tracking-widest text-zinc-400 hover:text-[#db520d] transition-colors duration-500">Instagram</a>
-                        <a href="https://vimeo.com/user175957220" target="_blank" rel="noopener noreferrer" className="block text-xs uppercase tracking-widest text-zinc-400 hover:text-[#db520d] transition-colors duration-500">Vimeo</a>
-                        <a href="https://www.linkedin.com/in/akshay-menon-135635190/" target="_blank" rel="noopener noreferrer" className="block text-xs uppercase tracking-widest text-zinc-400 hover:text-[#db520d] transition-colors duration-500">LinkedIn</a>
+                <div className="flex flex-col justify-between items-end text-right gap-12">
+                    <div className="flex gap-16">
+                        {/* Navigation Links */}
+                        <div className="space-y-2">
+                            <span className="text-[10px] uppercase tracking-[0.5em] text-[#db520d] block font-bold">Navigation</span>
+                            <Link href="/" className="block text-xs uppercase tracking-widest text-zinc-400 hover:text-[#db520d] transition-colors duration-500">Home</Link>
+                            <Link href="/work" className="block text-xs uppercase tracking-widest text-zinc-400 hover:text-[#db520d] transition-colors duration-500">Archive</Link>
+                            <Link href="/contact" className="block text-xs uppercase tracking-widest text-zinc-400 hover:text-[#db520d] transition-colors duration-500">Contact</Link>
+                        </div>
+                        {/* Social Links */}
+                        <div className="space-y-2">
+                            <span className="text-[10px] uppercase tracking-[0.5em] text-[#db520d] block font-bold">Social</span>
+                            <a href="https://www.instagram.com/akshaymen/" target="_blank" rel="noopener noreferrer" className="block text-xs uppercase tracking-widest text-zinc-400 hover:text-[#db520d] transition-colors duration-500">Instagram</a>
+                            <a href="https://vimeo.com/user175957220" target="_blank" rel="noopener noreferrer" className="block text-xs uppercase tracking-widest text-zinc-400 hover:text-[#db520d] transition-colors duration-500">Vimeo</a>
+                            <a href="https://www.linkedin.com/in/akshay-menon-135635190/" target="_blank" rel="noopener noreferrer" className="block text-xs uppercase tracking-widest text-zinc-400 hover:text-[#db520d] transition-colors duration-500">LinkedIn</a>
+                        </div>
                     </div>
-                    <div className="mt-24 text-[9px] uppercase tracking-[0.4em] text-zinc-800 font-bold cursor-default">
+                    <div className="mt-12 text-[9px] uppercase tracking-[0.4em] text-zinc-800 font-bold cursor-default">
                         © 2026 <span className="hover:text-[#db520d] transition-colors duration-300">nodeleap studios</span> x <span className="hover:text-white transition-colors duration-300">aachath akshay menon</span>
                     </div>
                 </div>

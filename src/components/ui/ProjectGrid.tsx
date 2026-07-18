@@ -36,6 +36,11 @@ export default function ProjectGrid() {
                                         <div className="text-zinc-600 group-hover:text-zinc-400 transition-colors text-xs uppercase tracking-widest font-medium">Coming Soon</div>
                                     </div>
                                 )}
+                                {project.duration && (
+                                    <div className="absolute bottom-3 right-3 z-10 bg-black/75 backdrop-blur-[2px] px-2 py-0.5 rounded text-[10px] font-mono text-zinc-300 tracking-wider border border-zinc-800/30">
+                                        {project.duration}
+                                    </div>
+                                )}
                                 <div className="absolute inset-0 bg-linear-to-t from-black/60 to-transparent" />
                             </div>
                             <div className="space-y-1">
