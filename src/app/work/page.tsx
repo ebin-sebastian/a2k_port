@@ -10,7 +10,7 @@ export default function WorkPage() {
         <main className="min-h-screen bg-[#050505]">
             <Header />
 
-            <div className="pt-32 md:pt-48 px-8 md:px-16 mb-24">
+            <div className="pt-32 md:pt-48 px-8 md:px-16 mb-12 md:mb-16">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}

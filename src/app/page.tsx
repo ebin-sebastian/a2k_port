@@ -187,7 +187,7 @@ export default function Home() {
         </section>
 
         {/* Featured Projects Selection */}
-        <div className="px-8 md:px-16 pt-32 bg-[#050505]">
+        <div className="px-8 md:px-16 pt-12 md:pt-32 bg-[#050505]">
           <div className="flex justify-between items-end border-b border-zinc-900 pb-12">
             <h2 className="text-4xl md:text-6xl font-black uppercase tracking-tighter">Selected <br />Works</h2>
             <div className="text-right pb-2 min-h-[48px] flex flex-col justify-end items-end">
