@@ -21,16 +21,24 @@ export default function FeaturedProjects() {
                     <div className={`lg:col-span-8 ${index % 2 === 0 ? "lg:order-1" : "lg:order-2"}`}>
                         <Link href={`/work/${project.id}`} className="block relative aspect-video overflow-hidden rounded-sm bg-zinc-900 group">
                             {project.thumbnailUrl ? (
-                                <video
-                                    src={project.thumbnailUrl}
-                                    autoPlay
-                                    loop
-                                    muted
-                                    playsInline
-                                    disablePictureInPicture
-                                    preload="metadata"
-                                    className="w-full h-full object-cover transition-all duration-1000 ease-[0.16,1,0.3,1] group-hover:scale-105 group-hover:opacity-90"
-                                />
+                                project.thumbnailUrl.endsWith(".mp4") ? (
+                                    <video
+                                        src={project.thumbnailUrl}
+                                        autoPlay
+                                        loop
+                                        muted
+                                        playsInline
+                                        disablePictureInPicture
+                                        preload="metadata"
+                                        className="w-full h-full object-cover transition-all duration-1000 ease-[0.16,1,0.3,1] group-hover:scale-105 group-hover:opacity-90"
+                                    />
+                                ) : (
+                                    <img
+                                        src={project.thumbnailUrl}
+                                        alt={project.title}
+                                        className="w-full h-full object-cover transition-all duration-1000 ease-[0.16,1,0.3,1] group-hover:scale-105 group-hover:opacity-90"
+                                    />
+                                )
                             ) : (
                                 <div className="w-full h-full flex items-center justify-center bg-zinc-800/20 text-zinc-700 uppercase tracking-widest text-[10px]">
                                     Project in Production

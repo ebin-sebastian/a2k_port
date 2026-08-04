@@ -63,7 +63,7 @@ export const projects: Project[] = [
         description: "Conceptual visual project focusing on artistic story-telling.",
         role: "Direction & Writing",
         videoUrl: "https://www.epicon.in/movies/jerryland",
-        thumbnailUrl: "",
+        thumbnailUrl: "/assets/images/jerryland.jpeg",
         duration: "14:00"
     },
     {
@@ -73,7 +73,7 @@ export const projects: Project[] = [
         description: "Dynamic commercial featuring Divya Prabha, focusing on the cinematic capabilities of the Vivo V50.",
         role: "Direction & Writing",
         videoUrl: "https://www.instagram.com/reels/DGK0awjKIKU/",
-        thumbnailUrl: "",
+        thumbnailUrl: "/assets/images/vivo.jpeg",
         duration: "1:00"
     },
     {
@@ -94,7 +94,7 @@ export const projects: Project[] = [
         description: "Impactful educational content developed for Bodhini NGO to promote cyber safety.",
         role: "Direction & Writing",
         videoUrl: "https://www.youtube.com/watch?v=E3LHVkrcOzc",
-        thumbnailUrl: "",
+        thumbnailUrl: "/assets/videos/Cyber safety for pre teens ｜ English ｜ Bodhini NGO.mp4",
         duration: "5:32"
     },
     {
@@ -104,7 +104,7 @@ export const projects: Project[] = [
         description: "Sensitive and informative content focusing on body safety for children.",
         role: "Direction & Writing",
         videoUrl: "https://www.youtube.com/watch?si=JbhRSeSv4OGjmkMz&v=-mAM4FS9cAY&feature=youtu.be",
-        thumbnailUrl: "",
+        thumbnailUrl: "/assets/videos/Body safety rules for smaller children v1.1 Malayalam.mp4",
         duration: "3:34"
     },
     {
@@ -114,7 +114,7 @@ export const projects: Project[] = [
         description: "Conceptual film project featuring Anna Ben, exploring themes of restoration and growth.",
         role: "Direction & Writing",
         videoUrl: "https://www.youtube.com/watch?v=RQKuwY6LgPU",
-        thumbnailUrl: "",
+        thumbnailUrl: "/assets/videos/Healing ｜ Malayalam.mp4",
         duration: "2:54"
     }
 ];

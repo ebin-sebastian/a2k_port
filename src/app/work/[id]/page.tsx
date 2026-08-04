@@ -140,7 +140,17 @@ export default function ProjectPage({ params }: { params: Promise<{ id: string }
                             />
                         ) : project.videoUrl ? (
                             <div className="w-full h-full flex flex-col items-center justify-center bg-zinc-950/80 border border-zinc-900 text-center p-8 relative overflow-hidden group">
-                                <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(219,82,13,0.08)_0%,transparent_70%)] pointer-events-none" />
+                                {project.thumbnailUrl && !project.thumbnailUrl.endsWith(".mp4") && (
+                                    <>
+                                        <img
+                                            src={project.thumbnailUrl}
+                                            alt={project.title}
+                                            className="absolute inset-0 w-full h-full object-cover opacity-25 group-hover:scale-105 group-hover:opacity-35 transition-all duration-[1.5s] ease-[0.16,1,0.3,1]"
+                                        />
+                                        <div className="absolute inset-0 bg-black/40 backdrop-blur-[1px] pointer-events-none" />
+                                    </>
+                                )}
+                                <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(219,82,13,0.08)_0.05)_0%,transparent_70%)] pointer-events-none" />
                                 
                                 <span className="text-[10px] uppercase tracking-[0.4em] text-[#db520d] mb-4 font-bold relative z-10">
                                     External Platform
@@ -156,6 +166,15 @@ export default function ProjectPage({ params }: { params: Promise<{ id: string }
                                 >
                                     Watch Film
                                 </a>
+                            </div>
+                        ) : project.thumbnailUrl && !project.thumbnailUrl.endsWith(".mp4") ? (
+                            <div className="w-full h-full relative overflow-hidden group">
+                                <img
+                                    src={project.thumbnailUrl}
+                                    alt={project.title}
+                                    className="w-full h-full object-cover transition-transform duration-[1.5s] ease-[0.16,1,0.3,1] group-hover:scale-105"
+                                />
+                                <div className="absolute inset-0 bg-black/20" />
                             </div>
                         ) : (
                             <div className="w-full h-full flex items-center justify-center text-zinc-600 uppercase tracking-widest text-xs">

@@ -22,15 +22,23 @@ export default function ProjectGrid() {
                         >
                             <div className="relative aspect-video overflow-hidden rounded-lg bg-zinc-900 mb-6 transition-transform duration-500 group-hover:scale-[1.02]">
                                 {project.thumbnailUrl ? (
-                                    <video
-                                        autoPlay
-                                        loop
-                                        muted
-                                        playsInline
-                                        className="w-full h-full object-cover opacity-70 group-hover:opacity-100 transition-opacity duration-500"
-                                    >
-                                        <source src={project.thumbnailUrl} type="video/mp4" />
-                                    </video>
+                                    project.thumbnailUrl.endsWith(".mp4") ? (
+                                        <video
+                                            autoPlay
+                                            loop
+                                            muted
+                                            playsInline
+                                            className="w-full h-full object-cover opacity-70 group-hover:opacity-100 transition-opacity duration-500"
+                                        >
+                                            <source src={project.thumbnailUrl} type="video/mp4" />
+                                        </video>
+                                    ) : (
+                                        <img
+                                            src={project.thumbnailUrl}
+                                            alt={project.title}
+                                            className="w-full h-full object-cover opacity-70 group-hover:opacity-100 transition-opacity duration-500"
+                                        />
+                                    )
                                 ) : (
                                     <div className="w-full h-full flex items-center justify-center bg-zinc-800/50 group-hover:bg-zinc-800 transition-colors">
                                         <div className="text-zinc-600 group-hover:text-zinc-400 transition-colors text-xs uppercase tracking-widest font-medium">Coming Soon</div>
