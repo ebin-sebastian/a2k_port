@@ -21,7 +21,7 @@ const coveredByYourGrace = Covered_By_Your_Grace({
 
 export const metadata: Metadata = {
   title: "A2k - Writing & Directing",
-  description: "I'm A2K - a director and writer drawn to visual storytelling that feels honest and emotionally grounded.I worked on commercial sets for brands such as Facebook and Amazon. As a director, I’ve created festival-selected short films, impactful PSAs, brand films, and documentaries. I’ve also led large-scale explainer and training video projects, co-founded Nodleap Studios, and delivered 20+ videos. Across formats, I believe in story-first filmmaking—whether commercial, intimate, or educational.",
+  description: "I'm a director and writer drawn to visual storytelling that feels honest and emotionally grounded. I began my journey as a BTS camera lead on major Bollywood productions like Student of the Year 2 and Zero. From there, I moved into commercial sets as an assistant director for brands such as Facebook and Amazon. As a director, I've created festival-selected short films, impactful PSAs, brand films, and documentaries. I co-founded Nodleap Studios, a production studio behind ads, music videos, and explainer/training content, delivering 350+ videos for clients. Whatever the format, I believe in story-first filmmaking.",
 };
 
 export default function RootLayout({

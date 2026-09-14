@@ -25,7 +25,7 @@ export default function WorkPage() {
                     </div>
                     <div className="max-w-xs">
                         <p className="text-zinc-500 text-xs uppercase tracking-widest leading-relaxed font-medium">
-                            A comprehensive collection of direction, commercial, and collaborative visual projects spanning a decade of cinematic exploration.
+                            A comprehensive collection of commercials, narrative projects, and PSAs.
                         </p>
                     </div>
                 </motion.div>

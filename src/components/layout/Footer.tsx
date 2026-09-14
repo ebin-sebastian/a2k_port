@@ -8,7 +8,7 @@ export default function Footer() {
             <div className="container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-24">
                 <div>
                     <h2 className="text-5xl md:text-7xl font-bold uppercase tracking-tighter mb-16 leading-none">
-                        DIRECT YOUR <br /> <span className="text-zinc-600">VISION.</span>
+                        Let&apos;s create <br /> <span className="text-zinc-600">something impactful.</span>
                     </h2>
                     <div className="space-y-8">
                         <div className="group">
